@@ -23,8 +23,8 @@ include_once(dirname(__FILE__).'/class.inc.php');
 add_event_handler('register_user', array(&$adult_content, 'on_register') );  
           
 		  // Ajout une entrée dans le menubar
-          add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identification'));
           add_event_handler('blockmanager_register_blocks', array(&$adult_content, 'register_ac_menubar_blocks'));
+          add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identification'));
 
 
 

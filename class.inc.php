@@ -23,40 +23,8 @@ class Adultcontent
   function loading_lang()
   {
     global $lang;
-    //include(get_language_filepath('plugin.lang.php', $this->plugin_path));
 	load_language('plugin.lang', $this->plugin_path);
   }  
-  /*
-  function remove_code($tlp_handle, $str_begin, $str_end)
-  {
-      global $template;
- 
-      $template->loadfile($tlp_handle);
- 
-      $p_beg = strpos($template->uncompiled_code[$tlp_handle], $str_begin);
-      $p_end = strpos($template->uncompiled_code[$tlp_handle], $str_end) + strlen($str_end);
-      $s = substr($template->uncompiled_code[$tlp_handle], $p_beg, $p_end - $p_beg);
- 
-      $template->uncompiled_code[$tlp_handle] = 
-      substr_replace($template->uncompiled_code[$tlp_handle], '', $p_beg, $p_end - $p_beg);
- 
-      return $s;
-  }
-  
-  function add_before_code($tlp_handle, $insert_before, $code)
-  {
-      global $template;
- 
-      $template->loadfile($tlp_handle);
-      $template->uncompiled_code[$tlp_handle] = str_replace($insert_before, $code.$insert_before, $template->uncompiled_code[$tlp_handle]);
-  } 
-  function add_after_code($tlp_handle, $insert_after, $code)
-  {
-    global $template;
- 
-    $template->loadfile($tlp_handle);
-    $template->uncompiled_code[$tlp_handle] = str_replace($insert_after, $insert_after.$code, $template->uncompiled_code[$tlp_handle]);
-  }*/
   function var_template()
   {
     global $user;
@@ -69,48 +37,6 @@ class Adultcontent
      $r = 'var.inc.php';	
     }
    return $r;
-  }
-  function link_charte_user($etat)
-  {
-  global $user, $lang;
-  include($this->var_template());
-  if ($etat == 'not_defined')
-  {
-      /*$s = $this->remove_code('menubar',$begin_ident ,$end_ident);
-      $this->add_before_code('menubar','<!-- BEGIN links -->',$s); 	  
-      $this->add_after_code('menubar','<!-- END hello -->
-    <ul>','<a href="'.get_root_url().'plugins/'.$this->plugin_name.'/charte_user.php?etat='.$etat.'">{lang:ac_charte_user_not}</a>');*/
-  }
-  elseif ($etat == 'defined')
-  {
-      $query = '
-SELECT group_id FROM '.USER_GROUP_TABLE.'
-  WHERE user_id IN (\''.$user['id'].'\')
-;';
-     $data_group = mysql_fetch_array(pwg_query($query));
-   	 $query = '
-SELECT name FROM '.GROUPS_TABLE.'
-  WHERE id IN (\''.$data_group['group_id'].'\')
-;';
-     $data_group_n = mysql_fetch_array(pwg_query($query));
-	 if ($data_group_n['name'] == '+18')
-	 {
-	 $statut = $lang['ac_user_text_18'];
-	 }
-	 if ($data_group_n['name'] == '16-17')
-	 {
-	 $statut = $lang['ac_user_text_16'];
-	 }
-	 if ($data_group_n['name'] == 'nothing')
-	 {
-	 $statut = $lang['ac_user_no_s'];
-	 }
-
-	  /*$this->add_after_code('menubar','<!-- END hello -->
-    <ul>',''.$statut.' <a href="'.get_root_url().'plugins/'.$this->plugin_name.'/charte_user.php?etat='.$etat.'">{lang:ac_logout}</a>');*/
-  }
-      
-
   }
 
   function register_ac_menubar_blocks($menu_ref_arr) {
@@ -144,7 +70,6 @@ $template->assign(
 	  {	     
 	      if ( !isset( $_COOKIE['pwg_adult_content'] ) or $_COOKIE['pwg_adult_content'] == 'open' )
 	      {	
-	        //$this->add_before_code('menubar','<!-- BEGIN links -->', $msg_opened);
 			$template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'closed')    ));
             if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
@@ -153,7 +78,6 @@ $template->assign(
 	      }
           elseif ( $_COOKIE['pwg_adult_content'] == 'closed' )
 	      {
-	        //$this->add_before_code('menubar','<!-- BEGIN links -->', $msg_closed);
             $template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'open')    ));
 			if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_fermer'));
@@ -164,7 +88,6 @@ $template->assign(
 	  }
 	  elseif (  $_GET['ad'] == 'closed' )
 	  {
-	    //$this->add_before_code('menubar','<!-- BEGIN links -->', $msg_closed);
         $template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'open')    ));
 		setcookie( 'pwg_adult_content', 'closed', time()+60*60*24*30, cookie_path() );	  
             if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
@@ -174,7 +97,6 @@ $template->assign(
 	  }
 	  elseif (  $_GET['ad'] == 'open' )
 	  {
-	    //$this->add_before_code('menubar','<!-- BEGIN links -->', $msg_opened);
             $template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'closed')    ));
 			if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
@@ -187,12 +109,15 @@ $template->assign(
     }//fin if guest
     elseif ($user['username'] == '18')
     {  
-      $this->remove_code('menubar', '<dl id="mbIdentification">', '<!-- END quickconnect -->
-
-  </dd>
-</dl>');
-  
-      $this->add_before_code('menubar','<!-- BEGIN tags -->',$msg_18);
+		$menu->hide_block('mbIdentification');
+		$template->assign(
+		  array(
+			'AC_MSG' => l10n('ac_user_text_18')
+			));
+		if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+               $block->set_title(l10n('ac_title_menu'));
+               $block->template = $this->plugin_path.'template/'.$user['template'].'/msg.tpl';
+        }
 	  
 	  $_SESSION['age']="18"; 
         setcookie( 'age', '18', time()+60*60*24*30, cookie_path() );	  
@@ -200,12 +125,15 @@ $template->assign(
     }//fin if 18 ans
     elseif ($user['username'] == '16')
     {
-      $this->remove_code('menubar', '<dl id="mbIdentification">', '<!-- END quickconnect -->
-
-  </dd>
-</dl>');
-  
-      $this->add_before_code('menubar','<!-- BEGIN tags -->',$msg_16);
+		$menu->hide_block('mbIdentification');
+		$template->assign(
+		  array(
+			'AC_MSG' => l10n('ac_user_text_16')
+			));
+		if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+               $block->set_title(l10n('ac_title_menu'));
+               $block->template = $this->plugin_path.'template/'.$user['template'].'/msg.tpl';
+        }
 
     }//fin if 16-17 ans
     elseif (!is_admin())
@@ -236,11 +164,51 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 
 	  if ( $is_grouped == 0 )
 	  {
-	  $this->link_charte_user('not_defined');
+		$template->assign(
+		  array(
+			'AC_ETAT' => 'not_defined',
+			'AC_MSG' => l10n('ac_charte_user_not')
+			));
+		$menu = & $menu_ref_arr[0];
+		$block = $menu->get_block( 'mbAdultContent' );
+		$block->set_title(l10n('ac_title_choose'));
+		$block->template = $this->plugin_path.'template/'.$user['template'].'/choose.tpl';
+
 	  }
 	  else
 	  {	   
-	  $this->link_charte_user('defined');
+			$query = '
+	  SELECT group_id FROM '.USER_GROUP_TABLE.'
+		WHERE user_id IN (\''.$user['id'].'\')
+	  ;';
+		   $data_group = mysql_fetch_array(pwg_query($query));
+		   $query = '
+	  SELECT name FROM '.GROUPS_TABLE.'
+		WHERE id IN (\''.$data_group['group_id'].'\')
+	  ;';
+		   $data_group_n = mysql_fetch_array(pwg_query($query));
+		   if ($data_group_n['name'] == '+18')
+		   {
+		   $statut = l10n('ac_user_text_18');
+		   }
+		   if ($data_group_n['name'] == '16-17')
+		   {
+		   $statut = l10n('ac_user_text_16');
+		   }
+		   if ($data_group_n['name'] == 'nothing')
+		   {
+		   $statut = l10n('ac_user_no_s');
+		   }
+		$template->assign(
+		  array(
+			'AC_ETAT' => 'defined',
+			'AC_MSG' => $statut.". ".l10n('ac_charte_user_def')
+			));
+		$menu = & $menu_ref_arr[0];
+		$block = $menu->get_block( 'mbAdultContent' );
+		$block->set_title(l10n('ac_title_menu_statut'));
+		$block->template = $this->plugin_path.'template/'.$user['template'].'/choose.tpl';
+
 	  }
 	}
 

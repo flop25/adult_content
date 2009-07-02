@@ -1,5 +1,6 @@
 <?php
 $lang['ac_title_menu'] = 'Attention';
+$lang['ac_title_menu_statut'] ='Information';
 $lang['ac_text'] = 'Cette galerie contient des images s\'addressant à des personnes matures et/ou majeurs';
 $lang['ac_lien'] = 'enlever la protection';
 $lang['ac_identif'] = 'ou s\'identifier';

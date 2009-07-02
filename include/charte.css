@@ -5,4 +5,8 @@ BODY#adult_content_page #content
 #autre_content
 {
   padding:1em;
+  text-align:center;
+  }
+#content form {
+	text-align:left;
   }

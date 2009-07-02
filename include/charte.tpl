@@ -1,4 +1,4 @@
-{html_head}<link rel="stylesheet" type="text/css" href="{$pwg_root}plugins/{$PLUGIN_NAME}/include/charte.css">{/html_head}
+{html_head}<link rel="stylesheet" type="text/css" href="{$ROOT_URL}plugins/{$PLUGIN_NAME}/include/charte.css">{/html_head}
 <div id="content">
 <div class="titrePage">
   <h2>Adult content</h2>
@@ -8,7 +8,7 @@
 
 
 <fieldset>
-<form method="post" action="{$pwg_root}identification.php" >
+<form method="post" action="{$ROOT_URL}identification.php" >
     <input type="hidden" name="username" size="15" value="18"/>
     <input type="hidden" name="password" size="15" value="adult_content"/>
     <input class="submit" type="submit" name="login" value="{'ac_button_activ_18'|@translate}"/>
@@ -17,7 +17,7 @@
 </form>
 </fieldset>
 <fieldset>
-<form method="post" action="{$pwg_root}identification.php" id="quickconnect">
+<form method="post" action="{$ROOT_URL}identification.php" id="quickconnect">
     <input type="hidden" name="username" size="15" value="16"/>
     <input type="hidden" name="password" size="15" value="adult_content"/>
     <input class="submit" type="submit" name="login" value="{'ac_button_activ_16'|@translate}"/>

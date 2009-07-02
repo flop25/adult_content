@@ -1,9 +1,9 @@
-<link rel="stylesheet" type="text/css" href="{$pwg_root}plugins/{$PLUGIN_NAME}/include/charte.css">
+{html_head}<link rel="stylesheet" type="text/css" href="{$ROOT_URL}plugins/{$PLUGIN_NAME}/include/charte.css">{/html_head}
 
 <div id="content">
 <div class="titrePage">
       <ul class="categoryActions">
-      <li><a href="{$U_HOME}" title="{'return to homepage'|@translate}"><img src="{$themeconf.icon_dir}/home.png" class="button" alt="{'home'|@translate}"/></a></li>
+      <li><a href="{$U_HOME}" title="{'return to homepage'|@translate}"><img src="{$ROOT_URL}{$themeconf.icon_dir}/home.png" class="button" alt="{'home'|@translate}"/></a></li>
     </ul>
   <h2>Adult content config</h2>
 </div>
