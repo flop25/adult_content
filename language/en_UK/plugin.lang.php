@@ -1,5 +1,6 @@
 <?php
 $lang['ac_title_menu'] = 'Warning';
+$lang['ac_title_menu_statut'] ='Information';
 $lang['ac_text'] = 'This gallery contains images addressant to mature persons and\or adults.';
 $lang['ac_lien'] = 'remove this protection';
 $lang['ac_identif'] = 'or log-in';
