@@ -45,7 +45,46 @@ class Adultcontent
       return;
     $menu->register_block(new RegisteredBlock('mbAdultContent', 'Adult Content', 'AC'));
   }
+  function ac_lien_menu($menu)
+  {
+    array_push($menu, array('NAME' => 'Adult Content',
+            'URL' => get_admin_plugin_menu_link(get_root_url().'plugins/'.$this->plugin_name.'/admin/admin.php')));
+    return $menu;
+  }
+  function get_template($file)
+  {
+    global $user, $template;
 
+    $dir = $this->plugin_path.'template/';
+    $theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
+    $template_file = $dir.$user['template'].'/'.$file;
+
+    if (file_exists($theme_file))
+    {
+      return $theme_file;
+    }
+    elseif (file_exists($template_file))
+    {
+      return $template_file;
+    }
+    else
+    {
+      return $dir.'yoga/'.$file;
+    }
+  }
+
+  function set_block_on_index ()
+  {
+	global $page, $template;
+
+	if (isset($page['section']) and $page['section'] == 'categories')
+	{
+		$template->set_filename('ac_block', realpath($this->get_template('block.tpl') ) );
+		$begin = 'PLUGIN_INDEX_CONTENT_BEFORE';
+		$end = 'PLUGIN_INDEX_CONTENT_AFTER';
+		$template->concat($begin,	$template->parse('ac_block', true));
+	}
+  }
   function placer_identification($menu_ref_arr)
   {
 ///////////////////////[début du plug]////////////////////
@@ -73,7 +112,7 @@ $template->assign(
 			$template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'closed')    ));
             if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/opened.tpl';
+               $block->template = $this->get_template('opened.tpl');
             }
 	      }
           elseif ( $_COOKIE['pwg_adult_content'] == 'closed' )
@@ -81,7 +120,7 @@ $template->assign(
             $template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'open')    ));
 			if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_fermer'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/closed.tpl';
+               $block->template = $this->get_template('closed.tpl');
             }
 			
 	      }
@@ -92,7 +131,7 @@ $template->assign(
 		setcookie( 'pwg_adult_content', 'closed', time()+60*60*24*30, cookie_path() );	  
             if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_fermer'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/closed.tpl';
+               $block->template = $this->get_template('closed.tpl');
             }
 	  }
 	  elseif (  $_GET['ad'] == 'open' )
@@ -100,7 +139,7 @@ $template->assign(
             $template->assign(array(  'LINK' => $this->get_link_icon(duplicate_index_url(), 'closed')    ));
 			if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/opened.tpl';
+               $block->template = $this->get_template('opened.tpl');
             }
 
         setcookie( 'pwg_adult_content', 'open', time()+60*60*24*30, cookie_path() );	  
@@ -116,7 +155,7 @@ $template->assign(
 			));
 		if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/msg.tpl';
+               $block->template = $this->get_template('msg.tpl');
         }
 	  
 	  $_SESSION['age']="18"; 
@@ -132,7 +171,7 @@ $template->assign(
 			));
 		if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
                $block->set_title(l10n('ac_title_menu'));
-               $block->template = $this->plugin_path.'template/'.$user['template'].'/msg.tpl';
+               $block->template = $this->get_template('msg.tpl');
         }
 
     }//fin if 16-17 ans
