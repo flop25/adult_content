@@ -54,23 +54,29 @@ class Adultcontent
   function get_template($file)
   {
     global $user, $template;
-
-    $dir = $this->plugin_path.'template/';
-    $theme_file = $dir.$user['template'].'/'.$user['theme'].'/'.$file;
-    $template_file = $dir.$user['template'].'/'.$file;
-
-    if (file_exists($theme_file))
-    {
-      return $theme_file;
-    }
-    elseif (file_exists($template_file))
-    {
-      return $template_file;
-    }
-    else
-    {
-      return $dir.'yoga/'.$file;
-    }
+	$r_theme_file=array();
+	$dir = $this->plugin_path.'template/';
+	$r_theme_file=($template->smarty->template_dir);
+		foreach( $r_theme_file as $style)
+		{
+			$theme_file = explode("/", $style);
+			$pos = count($theme_file) - 2 ;
+			$theme_file = $dir.$theme_file[$pos].'/'.$file;
+			if (file_exists($theme_file))
+			{
+				return $theme_file;
+			}
+			else
+			{
+				$theme_file=NULL;
+		}
+		
+		
+	}
+	if (empty($theme_file))
+	{
+      return $dir.'default/'.$file;
+	}
   }
 
   function set_block_on_index ()
