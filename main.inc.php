@@ -5,7 +5,7 @@ Version: 2.1.2
 Description: manage adult content / Gerer du contenu adulte
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=141
 Author: Flop25
-Author URI: http://flop25.free.fr
+Author URI: http://www.planete-flop.fr/
 
 */
 
