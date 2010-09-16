@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: adult_content
-Version: 2.1.1
+Version: 2.1.2
 Description: manage adult content / Gerer du contenu adulte
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=141
 Author: Flop25

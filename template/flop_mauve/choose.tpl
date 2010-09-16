@@ -1,4 +1,4 @@
-<dt><img class="button" alt="{$AC_MSG}" src="{$pwg_root}template/yoga/icon/lost_password.png" />{'ac_title_menu_statut'|@translate}</dt>
+<dt><img class="button" alt="{$AC_MSG}" src="{$ROOT_URL}{$themeconf.icon_dir}/lost_password.png" />{'ac_title_menu_statut'|@translate}</dt>
 <dd>
   <ul>
 	<li>

@@ -245,7 +245,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 		$menu = & $menu_ref_arr[0];
 		$block = $menu->get_block( 'mbAdultContent' );
 		$block->set_title(l10n('ac_title_choose'));
-		$block->template = $this->plugin_path.'template/'.$user['template'].'/choose.tpl';
+		$block->template = $this->get_template('choose.tpl');
 
 	  }
 	  else
@@ -280,7 +280,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 		$menu = & $menu_ref_arr[0];
 		$block = $menu->get_block( 'mbAdultContent' );
 		$block->set_title(l10n('ac_title_menu_statut'));
-		$block->template = $this->plugin_path.'template/'.$user['template'].'/choose.tpl';
+		$block->template = $this->get_template('choose.tpl');
 
 	  }
 	}
