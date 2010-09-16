@@ -32,11 +32,12 @@ add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identific
 add_event_handler('loc_end_picture', 'comment_manage');
 function comment_manage()
 {
-	global $user, $template;
+	global $user, $template, $conf;
+	if ( isset($conf['comments_forall']) ) {
 	if ( ($user['username']=='18' or $user['username']=='16') and !$conf['comments_forall'] )
 	{
 		$template->clear_assign('comment_add');
-	}
+	}}
 }
 $adult_content = new Adultcontent($plugin_name, $plugin_path);
 set_plugin_data($adult_content->plugin_name, $adult_content);
