@@ -35,6 +35,6 @@ $lang['ac_retour_c'] = 'Je retourne sur la page précédente';
 $lang['ac_charte_user_not'] = 'Veuillez sélectionner votre âge !';
 $lang['ac_charte_user_def'] = 'changer votre statut';
 $lang['ac_not_def'] = 'Cette étape est indispensable mais ne vous sera plus demandé par la suite';
-$lang['ac_def'] = 'Voulez-vous changez votre status ?';
+$lang['ac_def'] = 'Voulez-vous changez votre statut ?';
 
 ?>

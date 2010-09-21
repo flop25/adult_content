@@ -90,6 +90,10 @@ SELECT id FROM '.GROUPS_TABLE.'
 	  {
       pwg_query('UPDATE '.USER_GROUP_TABLE.' SET group_id=\''.$data_group['id'].'\' WHERE user_id IN (\''.$user['id'].'\')' );
 	  }
+	  $query = '
+DELETE FROM '.USER_CACHE_TABLE.'
+  WHERE user_id = '.$user['id'];
+      pwg_query($query);
 	  log_user( $user['id'], false);
       redirect(make_index_url());
 }
