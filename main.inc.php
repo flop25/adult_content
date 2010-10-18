@@ -2,7 +2,7 @@
 /*
 Plugin Name: adult_content
 Version: 2.1.3
-Description: manage adult content / Gerer du contenu adulte
+Description: manage adult content
 Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=141
 Author: Flop25
 Author URI: http://www.planete-flop.fr/
