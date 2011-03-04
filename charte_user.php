@@ -16,7 +16,7 @@ if (!isset( $_POST['groupe'] ))
        'PLUGIN_NAME' => $adult_content->plugin_name
        ));
 
-   if ($_GET['etat'] == 'not_defined')
+   if (isset($_GET['etat']) and $_GET['etat'] == 'not_defined')
    {
        $template->assign(
          array(
@@ -26,7 +26,7 @@ if (!isset( $_POST['groupe'] ))
             )
          );
    }
-   elseif ($_GET['etat'] == 'defined')
+   elseif (isset($_GET['etat']) and $_GET['etat'] == 'defined')
    {
    	 $query = '
 SELECT group_id FROM '.USER_GROUP_TABLE.'

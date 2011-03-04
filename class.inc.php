@@ -123,19 +123,17 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
   {
 ///////////////////////[début du plug]////////////////////
     $this->loading_lang();
-    global $user, $conf, $page;
-  	global $template;
-
+    global $user, $conf, $page, $template;
     $menu = & $menu_ref_arr[0];
-	
-$template->assign(
-  array(
-    'AC_NAME' => AC_NAME
-    ));
+		$conf_plugin = explode("," , $conf['ad_c_plugin']);
+		$template->assign(
+			array(
+				'AC_NAME' => AC_NAME
+				));
 
 
     //include($this->var_template());
-    if (is_a_guest())
+    if (is_a_guest() and $conf_plugin[0]=='true')
 	{
 	
 ///////////////////////[gestion fermer/ouvert]////////////////////
@@ -180,6 +178,10 @@ $template->assign(
 	  }
 ///////////////////////[FIN fermer/ouvert]////////////////////
     }//fin if guest
+    elseif (is_a_guest() and $conf_plugin[0]!='true')
+    {  
+		  $menu->hide_block('mbAdultContent');
+    }
     elseif ($user['username'] == '18')
     {  
 		$menu->hide_block('mbIdentification');
@@ -243,9 +245,10 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 			'AC_MSG' => l10n('ac_charte_user_not')
 			));
 		$menu = & $menu_ref_arr[0];
-		$block = $menu->get_block( 'mbAdultContent' );
-		$block->set_title(l10n('ac_title_choose'));
-		$block->template = $this->get_template('choose.tpl');
+    if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+			$block->set_title(l10n('ac_title_choose'));
+			$block->template = $this->get_template('choose.tpl');
+        }
 
 	  }
 	  else
@@ -278,9 +281,10 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 			'AC_MSG' => $statut.". ".l10n('ac_charte_user_def')
 			));
 		$menu = & $menu_ref_arr[0];
-		$block = $menu->get_block( 'mbAdultContent' );
-		$block->set_title(l10n('ac_title_menu_statut'));
-		$block->template = $this->get_template('choose.tpl');
+    if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+			$block->set_title(l10n('ac_title_menu_statut'));
+			$block->template = $this->get_template('choose.tpl');
+		}
 
 	  }
 	}

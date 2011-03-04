@@ -41,6 +41,13 @@ INSERT INTO '.GROUPS_TABLE.'
   $data_group = mysql_fetch_array($result);
 	  pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('18').'\', \''.$data_group['id'].'\' )' );
 
+/////////////Config plugin
+    $q = '
+INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
+	VALUES
+	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+    pwg_query($q);
+
 }
 
 
@@ -180,6 +187,42 @@ UPDATE '.USER_INFOS_TABLE.'
 ;';
 	pwg_query($query);
 
+//////////// Check Config
+   $query = '
+SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
+  WHERE param IN (\'ad_c_plugin\')
+;';
+   $data_table = mysql_fetch_array(pwg_query($query));
+   $exist = $data_table['result'];
+   if ( $exist == 0 )
+   {
+    $q = '
+INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
+	VALUES
+	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+    pwg_query($q);
+   } 
+   else {
+      $query = '
+SELECT value FROM '.CONFIG_TABLE.'
+  WHERE param IN (\'ad_c_plugin\')
+;';
+   $data_conf = mysql_fetch_array(pwg_query($query));
+   $conf=explode(',', $data_conf['value']);
+   $nbr=count($conf);
+   
+     if ($nbr!=2)
+     {
+      pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'ad_c_plugin\')');
+      pwg_query($q);
+    $q = '
+INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
+	VALUES
+	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+    pwg_query($q);
+     }
+   }
+
 }//fin active
 
 
@@ -235,6 +278,8 @@ DELETE FROM '.GROUPS_TABLE.'
 ;';
   pwg_query($query);
 
+//////////////// Delete config
+  pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'ad_c_plugin\')');
 }//fin uninstall
 
 
