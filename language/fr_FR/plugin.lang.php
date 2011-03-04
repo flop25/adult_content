@@ -39,7 +39,7 @@ $lang['ac_def'] = 'Voulez-vous changez votre statut ?';
 
 $lang['ad_c_menublock_for_guest'] = 'Permettre aux visiteurs non-enregistrés de sélectionner leur âge ?';
 $lang['ad_c_block_on_index'] = 'Afficher un encart sur la page d\'accueil ? (Nécessite le plugin PWG Stuffs)';
-//$lang['ad_c_block_on_index_error'] = 'PWG Stuffs dans une version supérieure à 2.1.l est nécessaire';
+$lang['ad_c_block_on_index_error_2'] = 'PWG Stuffs dans une version supérieure à 2.1.l est nécessaire';
 $lang['ad_c_block_on_index_error'] = 'fonction non disponible pour l\'instant';
 $lang['ad_c_send'] = 'Enregistrer les changements';
 $lang['ad_c_msg_admin_1'] = 'Configuration du plugin mise à jour avec succès !';
