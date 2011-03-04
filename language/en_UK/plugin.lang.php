@@ -36,4 +36,11 @@ $lang['ac_charte_user_not'] = 'Please select your age!';
 $lang['ac_charte_user_def'] = 'change your statute';
 $lang['ac_not_def'] = 'This stage is essential but not will be asked to you anymore';
 $lang['ac_def'] = 'Do you want to change your status ?';
+
+$lang['ad_c_menublock_for_guest'] = 'Allow unregistered users to select their age?';
+$lang['ad_c_block_on_index'] = 'View a flyer on the homepage? (Requires plugin PWG_Stuffs)';
+$lang['ad_c_block_on_index_error_2'] = 'The minimum PWG_Stuffs version required is 2.1.l';
+$lang['ad_c_block_on_index_error'] = 'Not available for now';
+$lang['ad_c_send'] = 'Save Changes';
+$lang['ad_c_msg_admin_1'] = 'Plugin configuration updated successfully!';
 ?>

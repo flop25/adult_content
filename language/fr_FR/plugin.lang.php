@@ -43,6 +43,4 @@ $lang['ad_c_block_on_index_error_2'] = 'PWG Stuffs dans une version supérieure 
 $lang['ad_c_block_on_index_error'] = 'fonction non disponible pour l\'instant';
 $lang['ad_c_send'] = 'Enregistrer les changements';
 $lang['ad_c_msg_admin_1'] = 'Configuration du plugin mise à jour avec succès !';
-
-
 ?>

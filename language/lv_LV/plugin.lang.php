@@ -36,5 +36,12 @@ $lang['ac_retour_c'] = 'Atgriežos iepriekšējā lapā';
 $lang['ac_charte_user_not'] = 'Lūdzu izvēlaties savu vecumu!';
 $lang['ac_charte_user_def'] = 'izmainiet savu statusu';
 $lang['ac_not_def'] = 'Šis posms ir svarīgs, bet turpmāk vairs jums netiks prasīts';
-$lang['ac_def'] = 'Vai vēlaties izmainīt savu statusu ?'; 
+$lang['ac_def'] = 'Vai vēlaties izmainīt savu statusu ?';
+
+/*TODO*/$lang['ad_c_menublock_for_guest'] = 'Allow unregistered users to select their age?';
+/*TODO*/$lang['ad_c_block_on_index'] = 'View a flyer on the homepage? (Requires plugin PWG_Stuffs)';
+/*TODO*/$lang['ad_c_block_on_index_error_2'] = 'The minimum PWG_Stuffs version required is 2.1.l';
+/*TODO*/$lang['ad_c_block_on_index_error'] = 'Not available for now';
+/*TODO*/$lang['ad_c_send'] = 'Save Changes';
+/*TODO*/$lang['ad_c_msg_admin_1'] = 'Plugin configuration updated successfully!';
 ?>
