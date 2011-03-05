@@ -13,11 +13,9 @@ $page['infos'] = array();
 
 if (isset($_POST['option_ad_c']))
 {
-	$newconf_plugin = array(
-		$_POST['menublock_for_guest'],
-		$_POST['block_on_index'],
-	);
-	$newconf_plugin = implode ("," , $newconf_plugin);
+	$newconf_plugin = (isset($_POST['menublock_for_guest'])) ? 'true' : 'false';
+	$newconf_plugin .= (isset($_POST['block_on_index'])) ? ',true' : ',false';
+	//$newconf_plugin = implode ("," , $newconf_plugin);
 	$query = '
 		UPDATE '.CONFIG_TABLE.'
 		SET value="'.$newconf_plugin.'"
