@@ -4,7 +4,7 @@
 <dd>
   <ul>
 	{if isset($U_LOGOUT)}
-		{$AC_MSG} <li><a href="{$U_LOGOUT}">{'logout'|@translate}</a></li>
+		{$AC_MSG} <li><a href="{$U_LOGOUT}">{'ac_logout'|@translate}</a></li>
 	{/if}
   </ul>
 </dd>
