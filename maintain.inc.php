@@ -54,175 +54,172 @@ INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 
 function plugin_activate()
 {
-    global $conf;
-include_once(PHPWG_ROOT_PATH.'include/functions_user.inc.php');
-   ///user exist ?///
-   $query = '
-SELECT COUNT(*) AS result FROM '.USERS_TABLE.'
-  WHERE username IN (\'18\')
-;';
-   $data_user = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user['result'];
-   if ( $exist == 0 )
-   {
-	register_user('18', 'adult_content', '');
-   }
-   
-   $query = '
-SELECT COUNT(*) AS result FROM '.USERS_TABLE.'
-  WHERE username IN (\'16\')
-;';
-   $data_user = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user['result'];
-   if ( $exist == 0 )
-   {
-	register_user('16', 'adult_content', '');
-   }
-   ///group exist ?///
-   $query = '
-SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'+18\')
-;';
-   $data_user = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user['result'];
-   if ( $exist == 0 )
-   {
-      $query = '
-INSERT INTO '.GROUPS_TABLE.'
-  (name)
-  VALUES
-  (\'+18\')
-;';
-      pwg_query($query);
-////////////placer dans group 18////////////
-      $result = pwg_query('SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'+18\') ;');
-      $data_group = mysql_fetch_array($result);
-	  pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('18').'\', \''.$data_group['id'].'\' )' );
-   }
-   
-   $query = '
-SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'16-17\')
-;';
-   $data_user = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user['result'];
-   if ( $exist == 0 )
-   {
-      $query = '
-INSERT INTO '.GROUPS_TABLE.'
-  (name)
-  VALUES
-  (\'16-17\')
-;';
-      pwg_query($query);
-////////////placer dans group 16////////////
-      $result = pwg_query('SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'16-17\') ;');
-      $data_group = mysql_fetch_array($result);
-	  pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('16').'\', \''.$data_group['id'].'\' )' );
-	  
-   }
-      //grp nothing
-	  $query = '
-SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'nothing\')
-;';
-   $data_user = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user['result'];
-   if ( $exist == 0 )
-   {
-      $query = '
-INSERT INTO '.GROUPS_TABLE.'
-  (name)
-  VALUES
-  (\'nothing\')
-;';
-      pwg_query($query);
-	}
-
-   ///assoc user/group exist ?///
-   
-   $n_query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'16-17\')
-;';
-   $data_group = mysql_fetch_array(pwg_query($n_query));
-   $query = '
-SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
-  WHERE group_id IN (\''.$data_group['id'].'\') AND user_id IN (\''.get_userid('16').'\')
-;';
-   $data_user_group = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user_group['result'];
-   if ( $exist == 0 )
-   {
-	    pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('16').'\', \''.$data_group['id'].'\' )' );
-   }
-   $n_query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'+18\')
-;';
-   $data_group = mysql_fetch_array(pwg_query($n_query));
-   $query = '
-SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
-  WHERE group_id IN (\''.$data_group['id'].'\') AND user_id IN (\''.get_userid('18').'\')
-;';
-   $data_user_group = mysql_fetch_array(pwg_query($query));
-   $exist = $data_user_group['result'];
-   if ( $exist == 0 )
-   {
-	    pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('18').'\', \''.$data_group['id'].'\' )' );
-   }
-
-  ////////////mis en generic////////////
+	///user exist ?///
 	$query = '
-UPDATE '.USER_INFOS_TABLE.'
-  SET status=\'generic\'
-  WHERE user_id IN (\''.get_userid('16').'\')
-;';
+	SELECT COUNT(*) AS result FROM '.USERS_TABLE.'
+	WHERE username IN (\'18\')
+	;';
+	$data_user = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user['result'];
+	if ( $exist == 0 )
+	{
+		register_user('18', 'adult_content', '');
+	}
+	
+	$query = '
+	SELECT COUNT(*) AS result FROM '.USERS_TABLE.'
+	WHERE username IN (\'16\')
+	;';
+	$data_user = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user['result'];
+	if ( $exist == 0 )
+	{
+		register_user('16', 'adult_content', '');
+	}
+	///group exist ?///
+	$query = '
+	SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
+	WHERE name IN (\'+18\')
+	;';
+	$data_user = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user['result'];
+	if ( $exist == 0 )
+	{
+		$query = 'INSERT INTO '.GROUPS_TABLE.'
+							(name)
+							VALUES
+							(\'+18\')
+							;';
+		pwg_query($query);
+	////////////placer dans group 18////////////
+		$result = pwg_query('SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'+18\') ;');
+		$data_group = mysql_fetch_array($result);
+		pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('18').'\', \''.$data_group['id'].'\' )' );
+	}
+	
+	$query = '
+	SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
+	WHERE name IN (\'16-17\')
+	;';
+	$data_user = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user['result'];
+	if ( $exist == 0 )
+	{
+		$query = '
+		INSERT INTO '.GROUPS_TABLE.'
+		(name)
+		VALUES
+		(\'16-17\')
+		;';
+		pwg_query($query);
+////////////placer dans group 16////////////
+		$result = pwg_query('SELECT id FROM '.GROUPS_TABLE.' WHERE name IN (\'16-17\') ;');
+		$data_group = mysql_fetch_array($result);
+		pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('16').'\', \''.$data_group['id'].'\' )' );
+	
+	}
+		//grp nothing
+	$query = '
+	SELECT COUNT(*) AS result FROM '.GROUPS_TABLE.'
+	WHERE name IN (\'nothing\')
+	;';
+	$data_user = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user['result'];
+	if ( $exist == 0 )
+	{
+		$query = '
+		INSERT INTO '.GROUPS_TABLE.'
+		(name)
+		VALUES
+		(\'nothing\')
+		;';
+		pwg_query($query);
+	}
+	
+	///assoc user/group exist ?///
+	
+	$n_query = '
+	SELECT id FROM '.GROUPS_TABLE.'
+	WHERE name IN (\'16-17\')
+	;';
+	$data_group = mysql_fetch_array(pwg_query($n_query));
+	$query = '
+	SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
+	WHERE group_id IN (\''.$data_group['id'].'\') AND user_id IN (\''.get_userid('16').'\')
+	;';
+	$data_user_group = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user_group['result'];
+	if ( $exist == 0 )
+	{
+		pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('16').'\', \''.$data_group['id'].'\' )' );
+	}
+	$n_query = '
+	SELECT id FROM '.GROUPS_TABLE.'
+	WHERE name IN (\'+18\')
+	;';
+	$data_group = mysql_fetch_array(pwg_query($n_query));
+	$query = '
+	SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
+	WHERE group_id IN (\''.$data_group['id'].'\') AND user_id IN (\''.get_userid('18').'\')
+	;';
+	$data_user_group = mysql_fetch_array(pwg_query($query));
+	$exist = $data_user_group['result'];
+	if ( $exist == 0 )
+	{
+		pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.get_userid('18').'\', \''.$data_group['id'].'\' )' );
+	}
+	
+	////////////mis en generic////////////
+	$query = '
+	UPDATE '.USER_INFOS_TABLE.'
+	SET status=\'generic\'
+	WHERE user_id IN (\''.get_userid('16').'\')
+	;';
 	pwg_query($query);
 	
 	$query = '
-UPDATE '.USER_INFOS_TABLE.'
-  SET status=\'generic\'
-  WHERE user_id IN (\''.get_userid('18').'\')
-;';
+	UPDATE '.USER_INFOS_TABLE.'
+	SET status=\'generic\'
+	WHERE user_id IN (\''.get_userid('18').'\')
+	;';
 	pwg_query($query);
-
-//////////// Check Config
-   $query = '
-SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
-  WHERE param IN (\'ad_c_plugin\')
-;';
-   $data_table = mysql_fetch_array(pwg_query($query));
-   $exist = $data_table['result'];
-   if ( $exist == 0 )
-   {
-    $q = '
-INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
+	
+	//////////// Check Config
+	$query = '
+	SELECT COUNT(*) AS result FROM '.CONFIG_TABLE.'
+	WHERE param IN (\'ad_c_plugin\')
+	;';
+	$data_table = mysql_fetch_array(pwg_query($query));
+	$exist = $data_table['result'];
+	if ( $exist == 0 )
+	{
+	$q = '
+	INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
 	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
-    pwg_query($q);
-   } 
-   else {
-      $query = '
-SELECT value FROM '.CONFIG_TABLE.'
-  WHERE param IN (\'ad_c_plugin\')
-;';
-   $data_conf = mysql_fetch_array(pwg_query($query));
-   $conf=explode(',', $data_conf['value']);
-   $nbr=count($conf);
-   
-     if ($nbr!=2)
-     {
-      pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'ad_c_plugin\')');
-      pwg_query($q);
-    $q = '
-INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
-	VALUES
-	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
-    pwg_query($q);
-     }
-   }
-
+	pwg_query($q);
+	} 
+	else {
+		$query = '
+	SELECT value FROM '.CONFIG_TABLE.'
+	WHERE param IN (\'ad_c_plugin\')
+	;';
+	$data_conf = mysql_fetch_array(pwg_query($query));
+	$conf=explode(',', $data_conf['value']);
+	$nbr=count($conf);
+	
+	 if ($nbr!=2)
+	 {
+		pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'ad_c_plugin\')');
+		pwg_query($q);
+		$q = '
+		INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
+		VALUES
+		("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+		pwg_query($q);
+		 }
+	}
+	
 }//fin active
 
 

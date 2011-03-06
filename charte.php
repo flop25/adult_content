@@ -1,6 +1,12 @@
 <?php
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
+$conf_ad_c = explode("," , $conf['ad_c_plugin']);
+if ( !is_a_guest() or $conf_ad_c[0]!='true')
+{
+	redirect(make_index_url());
+}
+
 
 $adult_content = get_plugin_data('adult_content');
 

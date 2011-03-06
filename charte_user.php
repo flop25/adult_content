@@ -2,7 +2,10 @@
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
 $adult_content = get_plugin_data('adult_content');
-
+if ( is_a_guest() )
+{
+	redirect(make_index_url());
+}
 if (!isset( $_POST['groupe'] ))
 {
    $title = 'Adult content';
@@ -16,7 +19,7 @@ if (!isset( $_POST['groupe'] ))
        'PLUGIN_NAME' => $adult_content->plugin_name
        ));
 
-   if (isset($_GET['etat']) and $_GET['etat'] == 'not_defined')
+   if (isset($_GET['etat']) and $_GET['etat'] == 'not_defined' and !is_a_guest() )
    {
        $template->assign(
          array(
@@ -26,7 +29,7 @@ if (!isset( $_POST['groupe'] ))
             )
          );
    }
-   elseif (isset($_GET['etat']) and $_GET['etat'] == 'defined')
+   elseif (isset($_GET['etat']) and $_GET['etat'] == 'defined' and !is_a_guest() )
    {
    	 $query = '
 SELECT group_id FROM '.USER_GROUP_TABLE.'
@@ -38,18 +41,18 @@ SELECT name FROM '.GROUPS_TABLE.'
   WHERE id IN (\''.$data_group['group_id'].'\')
 ;';
      $data_group_n = mysql_fetch_array(pwg_query($query));
-	 if ($data_group_n['name'] == '+18')
-	 {
-	 $statut = $lang['ac_statut'].$lang['ac_user_text_18'];
-	 }
-	 if ($data_group_n['name'] == '16-17')
-	 {
-	 $statut = $lang['ac_statut'].$lang['ac_user_text_16'];
-	 }
-	 if ($data_group_n['name'] == 'nothing')
-	 {
-	 $statut = $lang['ac_user_no'];
-	 }
+		 if ($data_group_n['name'] == '+18')
+		 {
+			 $statut = $lang['ac_statut'].$lang['ac_user_text_18'];
+		 }
+		 if ($data_group_n['name'] == '16-17')
+		 {
+			 $statut = $lang['ac_statut'].$lang['ac_user_text_16'];
+		 }
+		 if ($data_group_n['name'] == 'nothing')
+		 {
+			 $statut = $lang['ac_user_no'];
+		 }
 	 
      $main = '<p>'.$statut.'</p>'
 	        .'<p><a href="javascript:void(0)" OnClick="history.back()" >'.$lang['ac_retour_c'].'</a></p>';
@@ -63,7 +66,7 @@ SELECT name FROM '.GROUPS_TABLE.'
    }
    else
    {
-   die('Hacking attempt!');
+		redirect(make_index_url());
    }
 
    $template->set_filename('charte', $adult_content->plugin_path.'include/charte_user.tpl');
