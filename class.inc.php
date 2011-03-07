@@ -4,17 +4,49 @@
 class Adultcontent
 {
   var $plugin_name, $plugin_path;
-  
+  var $idgroups_user = array();
+  var $idgroups_ad_c = array();// 0=+18 1=16 2=nothing
   function Adultcontent($plugin_name, $plugin_path)
   {
     // Args
     $this->plugin_name = $plugin_name;
     $this->plugin_path = $plugin_path;
-    // handler
-   // $this->initialize_event_handler();
   }
-  
-  function get_link_icon($main_link, $action)
+  function fill_idgroups_user()
+  {
+    global $user;
+
+    $query = 'SELECT group_id FROM ' . USER_GROUP_TABLE . ' WHERE user_id = ' . $user['id'] . ';';
+    $result = pwg_query($query);
+    while ($row = mysql_fetch_assoc($result))
+    {
+      array_push($this->idgroups_user, $row['group_id']);
+    }
+  }
+  function fill_idgroups_ad_c()
+  {
+    global $user;
+
+    $query = 'SELECT id FROM ' . GROUPS_TABLE . ' WHERE name IN (\'+18\', \'16-17\', \'nothing\') ORDER BY id';
+    $result = pwg_query($query);
+    while ($row = mysql_fetch_assoc($result))
+    {
+      array_push($this->idgroups_ad_c, $row['id']);
+    }
+  }
+  function is_in_ad_c_group()
+  {
+		foreach( $this->idgroups_ad_c as $id )
+		{
+			if ( in_array($id, $this->idgroups_user))
+			{
+				return $id;
+				exit; 
+			}
+		}
+		return false;
+	}
+	function get_link_icon($main_link, $action)
   {
     $link_url = add_url_params($main_link, array('ad' => $action));
     return $link_url;
@@ -23,7 +55,7 @@ class Adultcontent
   function loading_lang()
   {
     global $lang;
-	load_language('plugin.lang', $this->plugin_path);
+		load_language('plugin.lang', $this->plugin_path);
   }  
   function var_template()
   {
@@ -54,9 +86,9 @@ class Adultcontent
   function get_template($file)
   {
     global $user, $template;
-	$r_theme_file=array();
-	$dir = $this->plugin_path.'template/';
-	$r_theme_file=($template->smarty->template_dir);
+		$r_theme_file=array();
+		$dir = $this->plugin_path.'template/';
+		$r_theme_file=($template->smarty->template_dir);
 		foreach( $r_theme_file as $style)
 		{
 			$theme_file = explode("/", $style);
@@ -213,78 +245,46 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
     }//fin if 16-17 ans
     elseif (!is_admin())
     {
-	
 ////////////lié à quoi/////	
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'+18\')
-;';
-     $data_18 = mysql_fetch_array(pwg_query($query));
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'16-17\')
-;';
-     $data_16 = mysql_fetch_array(pwg_query($query));
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'nothing\')
-;';
-     $data_no = mysql_fetch_array(pwg_query($query));
-	 $n_query = '
-SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
-  WHERE group_id IN (\''.$data_18['id'].'\',\''.$data_16['id'].'\',\''.$data_no['id'].'\') AND user_id IN (\''.$user['id'].'\')
-;';
-      $data_user = mysql_fetch_array(pwg_query($n_query));
-	  $is_grouped = $data_user['result'];   
+			$this->fill_idgroups_user();
+			$this->fill_idgroups_ad_c();	
 
-	  if ( $is_grouped == 0 )
-	  {
-		$template->assign(
-		  array(
-			'AC_ETAT' => 'not_defined',
-			'AC_MSG' => l10n('ac_charte_user_not')
-			));
-		$menu = & $menu_ref_arr[0];
-    if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
-			$block->set_title(l10n('ac_title_choose'));
-			$block->template = $this->get_template('choose.tpl');
-        }
-
-	  }
-	  else
-	  {	   
-			$query = '
-	  SELECT group_id FROM '.USER_GROUP_TABLE.'
-		WHERE user_id IN (\''.$user['id'].'\')
-	  ;';
-		   $data_group = mysql_fetch_array(pwg_query($query));
-		   $query = '
-	  SELECT name FROM '.GROUPS_TABLE.'
-		WHERE id IN (\''.$data_group['group_id'].'\')
-	  ;';
-		   $data_group_n = mysql_fetch_array(pwg_query($query));
-		   if ($data_group_n['name'] == '+18')
-		   {
-		   $statut = l10n('ac_user_text_18');
-		   }
-		   if ($data_group_n['name'] == '16-17')
-		   {
-		   $statut = l10n('ac_user_text_16');
-		   }
-		   if ($data_group_n['name'] == 'nothing')
-		   {
-		   $statut = l10n('ac_user_no_s');
-		   }
-		$template->assign(
-		  array(
-			'AC_ETAT' => 'defined',
-			'AC_MSG' => $statut.". ".l10n('ac_charte_user_def')
-			));
-		$menu = & $menu_ref_arr[0];
-    if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
-			$block->set_title(l10n('ac_title_menu_statut'));
-			$block->template = $this->get_template('choose.tpl');
-		}
+			if ( !$this->is_in_ad_c_group() )
+			{
+				$template->assign(
+					array(
+					'AC_MSG' => l10n('ac_charte_user_not')
+					));
+				$menu = & $menu_ref_arr[0];
+				if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+					$block->set_title(l10n('ac_title_choose'));
+					$block->template = $this->get_template('choose.tpl');
+				}
+			}
+			else
+			{	   
+				$link=$this->is_in_ad_c_group();
+				if ($link == $this->idgroups_ad_c[0])
+				{
+					$statut = l10n('ac_user_text_18');
+				}
+				if ($link ==  $this->idgroups_ad_c[1])
+				{
+					$statut = l10n('ac_user_text_16');
+				}
+				if ($link ==  $this->idgroups_ad_c[2])
+				{
+					$statut = l10n('ac_user_no_s');
+				}
+				$template->assign(
+				array(
+				'AC_MSG' => $statut.". ".l10n('ac_charte_user_def')
+				));
+				$menu = & $menu_ref_arr[0];
+				if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
+					$block->set_title(l10n('ac_title_menu_statut'));
+					$block->template = $this->get_template('choose.tpl');
+				}
 
 	  }
 	}
@@ -295,7 +295,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 	  include_once( PHPWG_ROOT_PATH.'include/common.inc.php' );
     $user_id = get_userid($_POST['login']);
     log_user( $user_id, false);
-      redirect(PHPWG_ROOT_PATH.'plugins/adult_content/charte_user.php?etat=not_defined');
+      redirect(PHPWG_ROOT_PATH.'plugins/adult_content/charte_user.php');
   } 
 }//fin class
 ?>

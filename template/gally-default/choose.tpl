@@ -2,7 +2,7 @@
 <dd>
   <ul>
 	<li>
-	  <a href="{$pwg_root}plugins/{$AC_NAME}/charte_user.php?etat={$AC_ETAT}">{$AC_MSG}</a>
+	  <a href="{$pwg_root}plugins/{$AC_NAME}/charte_user.php">{$AC_MSG}</a>
 	</li>
   </ul>
 </dd>
