@@ -1,6 +1,4 @@
-{html_head}
-<link rel="stylesheet" type="text/css" href="{$ROOT_URL}plugins/{$PLUGIN_NAME}/include/charte.css">
-{/html_head}
+{combine_css path="plugins/$PLUGIN_NAME/include/charte.css"}
 <div class="content" id="ac_content">
   <table id="table_content" border="0" cellspacing="0" cellpadding="0">
     <tr>

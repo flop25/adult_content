@@ -1,4 +1,4 @@
-{html_head}<link rel="stylesheet" type="text/css" href="{$ROOT_URL}plugins/{$PLUGIN_NAME}/include/charte.css">{/html_head}
+{combine_css path="plugins/$PLUGIN_NAME/include/charte.css"}
 <div class="content" id="ac_content">
 <div class="titrePage">
   <h2>Adult content</h2>

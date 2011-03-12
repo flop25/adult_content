@@ -74,13 +74,19 @@ class Adultcontent
   function register_ac_menubar_blocks($menu_ref_arr) {
     $menu = & $menu_ref_arr[0];
     if ($menu->get_id() != 'menubar')
+		{
       return;
+		}
     $menu->register_block(new RegisteredBlock('mbAdultContent', 'Adult Content', 'AC'));
   }
   function ac_lien_menu($menu)
   {
-    array_push($menu, array('NAME' => 'Adult Content',
-            'URL' => get_admin_plugin_menu_link(get_root_url().'plugins/'.$this->plugin_name.'/admin/admin.php')));
+    array_push(
+			$menu,
+			array('NAME' => 'Adult Content',
+            'URL'  => get_admin_plugin_menu_link(get_root_url().'plugins/'.$this->plugin_name.'/admin/admin.php')
+						)
+		);
     return $menu;
   }
   function get_template($file)
