@@ -255,7 +255,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 			$this->fill_idgroups_user();
 			$this->fill_idgroups_ad_c();	
 
-			if ( !$this->is_in_ad_c_group() )
+			if ( !$this->is_in_ad_c_group() )// lié à rien
 			{
 				$template->assign(
 					array(
@@ -263,9 +263,20 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 					));
 				$menu = & $menu_ref_arr[0];
 				if (($block = $menu->get_block( 'mbAdultContent' )) != null) {
-					$block->set_title(l10n('ac_title_choose'));
+					//$block->set_title(l10n('ac_title_choose'));
 					$block->template = $this->get_template('choose.tpl');
 				}
+				$query = 'SELECT id FROM ' . GROUPS_TABLE . ' WHERE name IN (\'+18\', \'16-17\', \'nothing\') ORDER BY id';
+				$result = pwg_query($query);
+				if ( isset($conf['UserAdvManager']) )
+				{
+					$conf_UAM_2 = unserialize($conf['UserAdvManager']);
+					if ( in_array($conf_UAM_2[2], $this->idgroups_user))/// $conf_UAM_2[2] est le groupe des user en attente de modération
+					{
+						$menu->hide_block('mbAdultContent');
+					}
+				}
+
 			}
 			else
 			{	   
@@ -298,10 +309,13 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
   }//fin placer_identification
   function on_register()
   {
-	  include_once( PHPWG_ROOT_PATH.'include/common.inc.php' );
-    $user_id = get_userid($_POST['login']);
-    log_user( $user_id, false);
+	  if ( !function_exists('UAM_admin_menu'))
+		{
+			include_once( PHPWG_ROOT_PATH.'include/common.inc.php' );
+			$user_id = get_userid($_POST['login']);
+			log_user( $user_id, false);
       redirect(PHPWG_ROOT_PATH.'plugins/adult_content/charte_user.php');
+		}
   } 
 }//fin class
 ?>
