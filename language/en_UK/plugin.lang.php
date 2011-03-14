@@ -29,8 +29,8 @@ $lang['ac_text_activ_16'] = "<u> ... and I guarantee on the honor that </u>: <br
 - I am warned that this site proposes images with pornographic and erotic character. <br>
 - The laws of my country authorize me to reach this site.";
 $lang['ac_retour'] = 'I do not wish to activate this kind of contents and I return on the previous page';
-$lang['ac_retour_b'] = 'Je ne souhaite pas activer ce genre de contenu';
-$lang['ac_retour_c'] = 'Je retourne sur la page précédente';
+$lang['ac_retour_b'] = 'I don\'t want to see that kind of content';
+$lang['ac_retour_c'] = 'I come back on the previous page';
 
 $lang['ac_charte_user_not'] = 'Please select your age!';
 $lang['ac_charte_user_def'] = 'change your status ';
