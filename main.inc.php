@@ -21,7 +21,10 @@ define('AC_CONF' , $prefixeTable . 'ac_config');
 
 include_once(dirname(__FILE__).'/class.inc.php');
 add_event_handler('get_admin_plugin_menu_links', array(&$adult_content, 'ac_lien_menu') );
-add_event_handler('register_user', array(&$adult_content, 'on_register') );
+if (!defined('IN_ADMIN') or !IN_ADMIN)
+{
+	add_event_handler('register_user', array(&$adult_content, 'on_register') );
+}
 // Ajout une entrée dans le menubar
 add_event_handler('blockmanager_register_blocks', array(&$adult_content, 'register_ac_menubar_blocks'));
 add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identification'));

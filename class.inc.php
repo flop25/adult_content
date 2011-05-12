@@ -107,14 +107,14 @@ class Adultcontent
 			else
 			{
 				$theme_file=NULL;
+			}
+		
+		
 		}
-		
-		
-	}
-	if (empty($theme_file))
-	{
-      return $dir.'default/'.$file;
-	}
+		if (empty($theme_file))
+		{
+				return $dir.'default/'.$file;
+		}
   }
 
   function set_block_on_index ()
