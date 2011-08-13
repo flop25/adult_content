@@ -1,4 +1,4 @@
-{combine_css path="plugins/$PLUGIN_NAME/include/charte.css"}
+{combine_css path="plugins/adult_content/include/charte.css"}
 <div class="content" id="ac_content">
 <div class="titrePage">
   <h2>Adult content</h2>
