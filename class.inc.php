@@ -249,7 +249,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
         }
 
     }//fin if 16-17 ans
-    elseif (!is_admin())
+    elseif (!is_admin() and $user['status']!="generic")
     {
 ////////////lié à quoi/////	
 			$this->fill_idgroups_user();
