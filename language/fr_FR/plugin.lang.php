@@ -45,7 +45,7 @@ $lang['ad_c_block_on_index_error'] = 'fonction non disponible pour l\'instant';
 $lang['ad_c_manage_what'] = 'Le plugin gère le contenu';
 $lang['ad_c_manage_eroticonly'] = 'érotique seulement';
 $lang['ad_c_manage_pornonly'] = 'pornographique seulement';
-$lang['ad_c_manage_both'] = 'erotique et pornographique';
+$lang['ad_c_manage_both'] = 'érotique et pornographique';
 
 $lang['ad_c_send'] = 'Enregistrer les changements';
 $lang['ad_c_msg_admin_1'] = 'Configuration du plugin mise à jour avec succès !';
