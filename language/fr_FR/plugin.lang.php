@@ -41,6 +41,12 @@ $lang['ad_c_menublock_for_guest'] = 'Permettre aux visiteurs non-enregistrés de
 $lang['ad_c_block_on_index'] = 'Afficher un encart sur la page d\'accueil ? (Nécessite le plugin PWG Stuffs)';
 $lang['ad_c_block_on_index_error_2'] = 'PWG Stuffs dans une version supérieure à 2.1.l est nécessaire';
 $lang['ad_c_block_on_index_error'] = 'fonction non disponible pour l\'instant';
+
+$lang['ad_c_manage_what'] = 'Le plugin gère le contenu';
+$lang['ad_c_manage_eroticonly'] = 'érotique seulement';
+$lang['ad_c_manage_pornonly'] = 'pornographique seulement';
+$lang['ad_c_manage_both'] = 'erotique et pornographique';
+
 $lang['ad_c_send'] = 'Enregistrer les changements';
 $lang['ad_c_msg_admin_1'] = 'Configuration du plugin mise à jour avec succès !';
 $lang['ad_c_howitworks'] = 'Le principe du plugin est d\'aider à la gestion de contenus matures (il peut être adapté pour du contenu violent). Pour se faire, le plugin gère les visiteurs et/ou les utilisateurs (au choix selon votre paramétrage du plugin).<br />

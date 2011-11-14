@@ -45,7 +45,7 @@ INSERT INTO '.GROUPS_TABLE.'
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+	("ad_c_plugin" , "true,false,both" , "Plugin adult_content : menublock_for_guest, block_on_index, manage_what");';
     pwg_query($q);
 
 }
@@ -208,14 +208,13 @@ function plugin_activate()
 	$conf=explode(',', $data_conf['value']);
 	$nbr=count($conf);
 	
-	 if ($nbr!=2)
+	 if ($nbr!=3)
 	 {
 		pwg_query('DELETE FROM '.CONFIG_TABLE.' WHERE param IN (\'ad_c_plugin\')');
-		pwg_query($q);
 		$q = '
 		INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 		VALUES
-		("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+    ("ad_c_plugin" , "true,false,both" , "Plugin adult_content : menublock_for_guest, block_on_index, manage_what");';
 		pwg_query($q);
 		 }
 	}

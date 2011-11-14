@@ -20,9 +20,9 @@ include(PHPWG_ROOT_PATH.'include/page_header.php');
 load_language('plugin.lang', $adult_content->plugin_path);
 $template->assign(
   array(
-    'PLUGIN_NAME' => $adult_content->plugin_name
+    'PLUGIN_NAME' => $adult_content->plugin_name,
+    'AD_C_manage_what' => $conf_ad_c[2],
     ));
-
 $template->set_filename('controller', $adult_content->plugin_path.'include/charte.tpl');
 
 // +-----------------------------------------------------------------------+

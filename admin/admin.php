@@ -15,6 +15,7 @@ if (isset($_POST['option_ad_c']))
 {
 	$newconf_plugin = (isset($_POST['menublock_for_guest'])) ? 'true' : 'false';
 	$newconf_plugin .= (isset($_POST['block_on_index'])) ? ',true' : ',false';
+	$newconf_plugin .= (isset($_POST['manage_what'])) ? ','.$_POST['manage_what'] : ',both';
 	//$newconf_plugin = implode ("," , $newconf_plugin);
 	$query = '
 		UPDATE '.CONFIG_TABLE.'
@@ -35,6 +36,7 @@ if ($conf_ad_c[1]=='true') { $index=$check; } else { $index=NULL; }
 $disabled='disabled="disabled"';
 	$template->assign(
 		array(
+		  'AD_C_manage_what' => $conf_ad_c[2],
 		  'AD_C_menublock_for_guest' => $menublock,
 		  'AD_C_block_on_index' => $index,
 		  'AD_C_block_on_index_disabled' => $disabled,

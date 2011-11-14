@@ -14,6 +14,13 @@
     <input type="checkbox" name="block_on_index" value="true" {$AD_C_block_on_index} {$AD_C_block_on_index_disabled}/>
     {'ad_c_block_on_index_error'|@translate} <br />
     <br />
+    <span class="property">{'ad_c_manage_what'|@translate}</span>&nbsp;
+    <select name="manage_what" style="min-width:150px;">
+      <option value="16" {if ($AD_C_manage_what=="16")}selected{/if}>{'ad_c_manage_eroticonly'|@translate}</option>
+      <option value="18" {if ($AD_C_manage_what=="18")}selected{/if}>{'ad_c_manage_pornonly'|@translate}</option>
+      <option value="both" {if ($AD_C_manage_what=="both")}selected{/if}>{'ad_c_manage_both'|@translate}</option>
+    </select>
+    <br />
     <input type="submit" name="option_ad_c" id="button" value="{'ad_c_send'|@translate}" />
   </form>
 </fieldset>

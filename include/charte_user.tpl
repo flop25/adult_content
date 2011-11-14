@@ -9,6 +9,7 @@
   <div id="autre_content">
     <p>{$EXPLIC}</p>
     <p>{$MAIN}</p>
+    {if $AD_C_manage_what=="18" || $AD_C_manage_what=="both"}
     <fieldset>
       <form method="post" action="{$pwg_root}charte_user.php" >
         <input type="hidden" name="groupe" value="+18"/>
@@ -16,6 +17,8 @@
         {'ac_text_activ_18'|@translate}
       </form>
     </fieldset>
+    {/if}
+    {if $AD_C_manage_what=="16" || $AD_C_manage_what=="both"}
     <fieldset>
       <form method="post" action="{$pwg_root}charte_user.php">
         <input type="hidden" name="groupe" value="16-17"/>
@@ -23,6 +26,7 @@
         {'ac_text_activ_16'|@translate}
       </form>
     </fieldset>
+    {/if}
     <fieldset>
       <form method="post" action="{$pwg_root}charte_user.php">
         <input type="hidden" name="groupe" value="nothing"/>

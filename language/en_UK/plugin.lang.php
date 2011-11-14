@@ -41,38 +41,86 @@ $lang['ad_c_menublock_for_guest'] = 'Allow unregistered users to select their ag
 $lang['ad_c_block_on_index'] = 'View a flyer on the homepage? (Requires plugin PWG_Stuffs)';
 $lang['ad_c_block_on_index_error_2'] = 'The minimum PWG_Stuffs version required is 2.1.l';
 $lang['ad_c_block_on_index_error'] = 'Not available for now';
+$lang['ad_c_manage_what'] = 'Select the type of content the plugin should manage :';
+$lang['ad_c_manage_eroticonly'] = 'erotic content only';
+$lang['ad_c_manage_pornonly'] = 'pornographic content only';
+$lang['ad_c_manage_both'] = 'erotic and pornographic content';
+
+
 $lang['ad_c_send'] = 'Save Changes';
 $lang['ad_c_msg_admin_1'] = 'Plugin configuration updated successfully!';
-/*TODO*/$lang['ad_c_howitworks'] = 'Le principe du plugin est d\'aider à la gestion de contenus matures (il peut être adapté pour du contenu violent). Pour se faire, le plugin gère les visiteurs et/ou les utilisateurs (au choix selon votre paramétrage du plugin).<br />
+$lang['ad_c_howitworks'] = "The principle of the plugin is to help in the management of mature content (it can also be
+
+adapted for violent content). To do this, the plugin manages the visitors and/or the users
+
+as you wish according to your definition of parameters of the plugin.<br />
 <br />
-1 - Que devez-vous faire en tant qu\'admistrateur<br />
+1 - As administrator you must put your adult content in a private gallery or album (the
+
+plugin does not manage the rights to the level of images itself, at least not yet). Then
+
+assign the gallery or album to the two groups '18' and ' 16-17' (created by the plugin)
+
+like this:<br /><br />
+
+-allow the group '18' to see the adult content, reserved for users over the of age of 18
+
+and normal content (but generally the normal content is often public)
+<br /><br />
+-allow the group ' 16-17' to see the adult content reserved for users over the age of 16
+
+and normal content (generally the normal content is often public)
+<br /><br />
+- the 'nothing' group will see the normal content (but generally the normal content is
+
+often public)
 <br />
-Vous devez juste mettre vos catégories litigieuse en privé (le plugin ne gère pas les droits au niveau des images elle-même, du moins pas encore).<br />
-Ensuite attribuer ces galeries privées aux deux groupes "+18" et "16-17" (créés par le plugin) comme ceci :<br />
- - autoriser le groupe "+18" à voir le contenu pornographique ou autre, réservé aux plus de 18 ans ET le contenu érotique, réservé aux plus de 16 ans ET le contenu normal (mais normalement le contenu normal est public bien souvent)<br />
- - autoriser le groupe "16-17" à voir le contenu érotique, réservé aux plus de 16 ans ET le contenu normal (mais normalement le contenu normal est public bien souvent)<br />
- - autoriser le groupe "nothing" à voir le contenu normal (mais normalement le contenu normal est bien souvent public)<br />
+
 <br />
-Vous n\'avez rien d\'autre à faire.<br />
+2 - Functioning of the plugin<br />
+2.1 - The management of the users<br />
 <br />
-2 - Fonctionnement du plugin<br />
-2.1 - La gestion des utilisateurs<br />
+If the user is already recorded in the activation of the plugin, the plugin shows a small
+block pointing out that he must choose his age. Once he clicks, the page containing the message of 'adult content' will appear and the choice of choosing their age (Charte_user.php).
+
+Once a visitor chooses his age, it is re-aimed to the page of choice of age (Charte_user.php), directly after its recording.
+
+In practice, the plugin places the user in the 3 groups, ' 18' ' 16-17' and 'nothing',
+
+according to his choice of age. A user may at any time change his age via the block menu of
+
+adult_content except if it is disabled via the administration of piwigo (attention the
+
+direct link to charte_user.php continues to function all the same) : if you wish that a
+
+user cannot change his age then this plugin is useless and use directly the management of
+
+rights at the level of groups and/or images.<br />
 <br />
-Si l\'utilisateur est déjà enregistré à l\'actication du plugin, le plugin affiche un bloc menu indiquant qu\'il doit sélectionner son âge. Si il clique dessus, la page contenant le message d\'avertissement et le choix de l\âge (charte_user.php).<br />
-Si un visiteur s\'enregistre, il est redirigé vers la page de choix de l\'âge (charte_user.php), directement après son enregistrement.<br />
+2.2 - Visitor management<br />
 <br />
-En pratique, le plugin place l\'utilisateur dans les des 3 groupes, "+18" "16-17" et "nothing", selon son choix d\'âge. Un utilisateur peut à tout moment changer son âge via le bloc menu d\'adult_content sauf si celui est désactivé via l\'administration de piwigo (attention le lien direct vers charte_user.php continue de fonctionner tout de même) : si vous souhaiter qu\'un utilisateur ne puisse pas changer son âge alors ce plugin ne sert à rien, utiliser directement la gestion des droits au niveau des groupes et/ou des images.<br />
+If the option 'Allow visitors to non-registered to select their age ?' is enabled, then the
+
+plugin will manage the visitors. * It displays a block menu, indicating the gallery is
+
+'filtered' and that if he wishes to disable the filter, he must select his age.
+It is then redirected to the page of choice of the age for visitor (chartre.php).
+
+In practice, the visitor is then recorded under one of the 2 users created by the plugin: '
+
+18' belonging to the group ' 18 ', and ' 16' from the group ' 16-17 '.  These 2 user
+
+accounts may not be modified by users, only by the administrator.
+You open and choose to change the theme according to the age of the vistor via these 2 user
+
+accounts.<br />
 <br />
-2.2 - La gestion des visiteurs<br />
+2.3 - Possible adaptations<br />
 <br />
-Si l\'option "Permettre aux visiteurs non-enregistrés de sélectionner leur âge ?" est activée, alors le plugin gérera les visiteurs.<br />
-Il affiche un bloc menu, indiquant la galerie est "filtrée" et que s\'il souhaite désactiver le filtre, il doit sélectionner son âge. Il est alors redirigé vers la page de choix de l\'âge pour visiteur (chartre.php).<br />
-<br />
-En pratique, le visiteur est alors enregistré sous un des 2 utilisateurs créé par le plugin : "18" appartenant au groupe "+18", et "16" du groupe "16-17". Ces 2 comptes utilisateurs ne peuvent être modifié par eux-mêmes, mais uniquement par l\'administrateur lui-même. Vous ouvez ainsi choisir de changer le thème selon l\'âge du visteur via ces 2 comptes utilisateurs.<br />
-<br />
-2.3 - Adaptations possibles<br />
-<br />
-Vous pouvez adapter ce plugin pour du contenu violent, simplement en changeant les fichiers langues du plugin (utilisez le plugin LocalFiles Editor pour plus de facilité).<br />
-Les âges limites peuvent aussi être changés de cette façon.<br />
-';
+You can adapt this plugin for the violent content, simply by changing the files languages
+
+of the plugin (use the plugin Local Files Editor for more ease).  The age limits may also
+
+be changed in this way.
+";
 ?>

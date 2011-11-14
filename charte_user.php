@@ -1,6 +1,7 @@
 <?php
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
+$conf_ad_c = explode("," , $conf['ad_c_plugin']);
 $adult_content = get_plugin_data('adult_content');
 if ( is_a_guest() or $user['username'] == '16' or $user['username'] == '18')
 {
@@ -73,15 +74,20 @@ elseif (!isset( $_POST['groupe'] ))
 			 $statut = $lang['ac_user_no'];
 		}
 	 
-     $main = '<p>'.$statut.'</p>'
+    $main = '<p>'.$statut.'</p>'
 	        .'<p><a href="javascript:void(0)" OnClick="history.back()" >'.$lang['ac_retour_c'].'</a></p>';
-       $template->assign(
-         array(
-           'EXPLIC' => $lang['ac_def'],
-           'MAIN'  => $main,
-            )
-         );
+    $template->assign(
+    array(
+      'EXPLIC' => $lang['ac_def'],
+      'MAIN'  => $main,
+    )
+    );
    }
+    $template->assign(
+    array(
+      'AD_C_manage_what' => $conf_ad_c[2],
+    )
+    );
 
    $template->set_filename('charte', $adult_content->plugin_path.'include/charte_user.tpl');
 
