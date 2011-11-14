@@ -196,7 +196,7 @@ function plugin_activate()
 	$q = '
 	INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("ad_c_plugin" , "true,false" , "Plugin adult_content : menublock_for_guest, block_on_index");';
+    ("ad_c_plugin" , "true,false,both" , "Plugin adult_content : menublock_for_guest, block_on_index, manage_what");';
 	pwg_query($q);
 	} 
 	else {
