@@ -18,6 +18,7 @@ include(PHPWG_ROOT_PATH.'include/page_header.php');
 
 //include(get_language_filepath('plugin.lang.php', $adult_content->plugin_path));
 load_language('plugin.lang', $adult_content->plugin_path);
+load_language('lang', PHPWG_ROOT_PATH.PWG_LOCAL_DIR, array('no_fallback'=>true, 'local'=>true) );
 $template->assign(
   array(
     'PLUGIN_NAME' => $adult_content->plugin_name,

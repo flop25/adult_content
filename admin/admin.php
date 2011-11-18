@@ -40,9 +40,9 @@ $disabled='disabled="disabled"';
 		  'AD_C_menublock_for_guest' => $menublock,
 		  'AD_C_block_on_index' => $index,
 		  'AD_C_block_on_index_disabled' => $disabled,
+		  'AD_C_LANG' => $user['language'],
 		)
 	  );
-
 $template->set_filename('plugin_admin_content', $ad_c->plugin_path.'admin/admin.tpl');
 $template->assign_var_from_handle('ADMIN_CONTENT', 'plugin_admin_content');
 ?>

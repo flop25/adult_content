@@ -36,18 +36,18 @@ DELETE FROM '.USER_CACHE_TABLE.'
 }
 elseif (!isset( $_POST['groupe'] ))
 {
-   $title = 'Adult content';
-   $page['body_id'] = 'adult_content_page';
-   include(PHPWG_ROOT_PATH.'include/page_header.php');
-   load_language('plugin.lang', $adult_content->plugin_path);
-
-   $template->assign(
-     array(
-       'PLUGIN_NAME' => $adult_content->plugin_name
-       ));
+  $title = 'Adult content';
+  $page['body_id'] = 'adult_content_page';
+  include(PHPWG_ROOT_PATH.'include/page_header.php');
+  load_language('plugin.lang', $adult_content->plugin_path);
+  load_language('lang', PHPWG_ROOT_PATH.PWG_LOCAL_DIR, array('no_fallback'=>true, 'local'=>true) );
+  $template->assign(
+   array(
+     'PLUGIN_NAME' => $adult_content->plugin_name
+  ));
 ////////////lié à quoi/////	
-			$adult_content->fill_idgroups_user();
-			$adult_content->fill_idgroups_ad_c();	
+  $adult_content->fill_idgroups_user();
+  $adult_content->fill_idgroups_ad_c();	
 
 	if (!$adult_content->is_in_ad_c_group())
 	{

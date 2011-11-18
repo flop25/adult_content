@@ -79,4 +79,5 @@ In pratica, il visitatore viene allora abbinato ad uno dei 2 utenti creati dal p
 Potete adattare questo plugin per dei contenuti violenti, semplicemente cambiando i file lingua del plugin (usare il plugin LocalFiles Editor).<br />
 Il limite di età può anche esso essere cambiato in questo modo.<br />
 ';
+/*TODO*/$lang['ad_c_linktolang']="Go to the language file of Adult Content (need LocalFiles Editor enabled)"
 ?>

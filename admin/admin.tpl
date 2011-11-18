@@ -27,4 +27,6 @@
 <hr />
 <div style="text-align:left">
   {'ad_c_howitworks'|@translate}
+  <br />
+  <a href="{$ROOT_URL}plugins/LocalFilesEditor/show_default.php?file=plugins/adult_content/language/{$AD_C_LANG}/plugin.lang.php" target="_blank">{'ad_c_linktolang'|@translate} </a>
 </div>
