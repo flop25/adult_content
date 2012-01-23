@@ -1,7 +1,7 @@
 <?php
 $lang['ac_title_menu'] = 'Warning';
 $lang['ac_title_menu_statut'] ='Information';
-$lang['ac_text'] = 'This gallery contains images addressant to mature persons and\or adults.';
+$lang['ac_text'] = 'This gallery contains images for mature persons and\or adults.';
 $lang['ac_lien'] = 'remove this protection';
 $lang['ac_identif'] = 'or log-in';
 $lang['ac_fermer'] = 'or close';
@@ -33,7 +33,7 @@ $lang['ac_retour_b'] = 'I don\'t want to see that kind of content';
 $lang['ac_retour_c'] = 'I come back on the previous page';
 
 $lang['ac_charte_user_not'] = 'Please select your age!';
-$lang['ac_charte_user_def'] = 'change your status ';
+$lang['ac_charte_user_def'] = 'or otherwise click here';
 $lang['ac_not_def'] = 'This stage is essential but not will be asked to you anymore';
 $lang['ac_def'] = 'Do you want to change your status ?';
 
