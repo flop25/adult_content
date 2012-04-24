@@ -123,5 +123,5 @@ of the plugin (use the plugin Local Files Editor for more ease).  The age limits
 
 be changed in this way.
 ";
-$lang['ad_c_linktolang']="Go to the language file of Adult Content (need LocalFiles Editor enabled)"
+$lang['ad_c_linktolang']="Go to the language file of Adult Content (need LocalFiles Editor enabled)";
 ?>

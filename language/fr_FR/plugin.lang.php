@@ -81,5 +81,5 @@ En pratique, le visiteur est alors enregistré sous un des 2 utilisateurs créé
 Vous pouvez adapter ce plugin pour du contenu violent, simplement en changeant les fichiers langues du plugin (utilisez le plugin LocalFiles Editor pour plus de facilité).<br />
 Les âges limites peuvent aussi être changés de cette façon.<br />
 ';
-$lang['ad_c_linktolang']="Lien vers le fichier langue d'Adult Content (Nécessite localFiles Editor)"
+$lang['ad_c_linktolang']="Lien vers le fichier langue d'Adult Content (Nécessite localFiles Editor)";
 ?>

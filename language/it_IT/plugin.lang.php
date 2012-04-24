@@ -41,10 +41,6 @@ $lang['ad_c_menublock_for_guest'] = 'Permettere ai visitatori di selezionare la 
 $lang['ad_c_block_on_index'] = 'Visualizzare un flyer sulla home page ? (Necessita il plugin PWG Stuffs)';
 $lang['ad_c_block_on_index_error_2'] = 'PWG Stuffs in una versione superiore à 2.1.l è necessario';
 $lang['ad_c_block_on_index_error'] = 'funzione non disponibile attualmente';
-/*TODO*/$lang['ad_c_manage_what'] = 'Select the type of content the plugin should manage :';
-/*TODO*/$lang['ad_c_manage_eroticonly'] = 'erotic content only';
-/*TODO*/$lang['ad_c_manage_pornonly'] = 'pornographic content only';
-/*TODO*/$lang['ad_c_manage_both'] = 'erotic and pornographic content';
 $lang['ad_c_send'] = 'Registrare le modifiche';
 $lang['ad_c_msg_admin_1'] = 'Configurazione del plugin aggiornata correttamente!';
 $lang['ad_c_howitworks'] = 'Il principio del plugin è di aiutare nella gestione di contenuti per adulti (può essere adattato per i contenuti violenti). Per ciò, il plugin gestisce i visitatori e/o gli utenti (a scelta a seconda delle impostazioni del plugin).<br />
@@ -79,5 +75,5 @@ In pratica, il visitatore viene allora abbinato ad uno dei 2 utenti creati dal p
 Potete adattare questo plugin per dei contenuti violenti, semplicemente cambiando i file lingua del plugin (usare il plugin LocalFiles Editor).<br />
 Il limite di età può anche esso essere cambiato in questo modo.<br />
 ';
-/*TODO*/$lang['ad_c_linktolang']="Go to the language file of Adult Content (need LocalFiles Editor enabled)"
+
 ?>
