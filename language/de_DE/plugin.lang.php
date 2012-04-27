@@ -58,4 +58,12 @@ $lang['ad_c_manage_eroticonly'] = 'nur erotische Inhalte';
 $lang['ad_c_manage_pornonly'] = 'nur pornografische Inhalte';
 $lang['ad_c_manage_what'] = 'Wählen Sie die Art der Inhalte, die das Plugin verwalten soll:';
 $lang['ad_c_msg_admin_1'] = 'Plugin-Konfiguration erfolgreich aktualisiert!';
+$lang['ac_text_activ_16'] = '<u> ... und ich garantiere, hiermit </ u>: <br>
+- <B> Das ich, 16 oder 17 Jahre alt bin. </ B> <br>
+- Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
+- Die Gesetze meines Landes erlauben mir, Zutritt zu dieser Seite.';
+$lang['ac_text_activ_18'] = '<u> ... und ich garantiere, hiermit </ u>: <br>
+- <B> Das ich, nach den Gesetzen meines Landes, über 18 Jahre alt und Erwachsen bin. </ B> <br>
+- Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
+- Die Gesetze meines Landes erlauben mir, Zutritt zu dieser Seite.';
 ?>
