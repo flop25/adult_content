@@ -66,4 +66,61 @@ $lang['ac_text_activ_18'] = '<u> ... und ich garantiere, hiermit </ u>: <br>
 - <B> Das ich, nach den Gesetzen meines Landes, über 18 Jahre alt und Erwachsen bin. </ B> <br>
 - Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
 - Die Gesetze meines Landes erlauben mir, Zutritt zu dieser Seite.';
+$lang['ad_c_howitworks'] = 'Das Prinzip des Plugins ist, bei der Verwaltung von jugendfreien 
+Inhalten zu helfen (es kann auch für gewalttätige Inhalte angepasst 
+werden). Dazu verwaltet das Plugin die Besucher und/oder Nutzer nach 
+ihren Wünschen mit entsprechenden Definitionen und Parameter des 
+Plugins. <br />
+<br />
+1 - Als Administrator müssen Sie Ihre nicht jugendfreien Inhalte in eine 
+private Galerie oder ein Album packen (das Plugin verwaltet nicht die 
+Rechte auf der Ebene von einzelnen Bilder selbst, zumindest noch nicht). 
+Sie weisen die Galerie oder das Album zu den beiden Gruppen 18 und/oder 
+16-17 zu (erstellt durch das Plugin).
+Das sieht wie folgt aus: <br /> <br />
+
+-Erlaube der Gruppe \'18\', normale Inhalte (die in der Regel öffentlich sind) und
+Inhalte für Erwachsene zu sehen, die für Nutzer über 18 Jahren reserviert sind
+<br /> <br />
+
+-Erlaube der Gruppe "16-17", normale Inhalte (die in der Regel öffentlich sind)
+ und Inhalte für Jugendlich zu sehen, die für Nutzer über 16 Jahren bestimmt sind
+<br /> <br />
+
+-Die Gruppe "Nichts" sieht nur die normalen Inhalte (die in der Regel sowieso öffentlich sind)
+<br />
+
+<br />
+2 - Arbeitsweise des Plugins <br />
+2.1 - Die Benutzer Verwaltung <br />
+<br />
+Falls ein Benutzer bereits bei der Aktivierung des Plugins registriert ist, zeigt das Plugin nun einen kleinen
+blockierenden Hinweis, dass er sein Alter angeben muss. Sobald er hier klickt, wird die Seite mit der Meldung von "Nicht jugendfreien 
+Inhalten" erscheinen und er muss das Alter auswählen. (Charte_user.php).
+
+Sobald ein Besucher sein Alter gewählt hat, wird sich die Seite entsprechend seinem Alter, unmittelbar nach seiner Auswahl
+(Charte_user.php) neu ausrichten.
+
+In der Praxis legt das Plugin den Anwender nach seiner Wahl des Alters, in einer der 3 Gruppen \'18\' \'16-17\' oder \'nichts\' an,
+
+Ein Benutzer kann jederzeit sein Alter über das Block Menü ändern, (adult_content) es sei denn, es wurde über die Administration von Piwigo deaktiviert.
+(Achtung der direkter Link zu charte_user.php hat weiterhin die gleiche Funktion): 
+Wenn Sie möchten, dass ein Benutzer nicht sein Alter ändern kann, dann ist dieses Plugin nutzlos. Dann verwenden Sie direkt die Rechte-Verwaltung
+auf der Ebene von Gruppen und/oder Bildern. <br />
+<br />
+2.2 - Besucher Verwaltung <br />
+<br />
+Wenn die Option "Erlaube nicht registrierten Besuchern ihr Alter zu wählen?" aktiviert ist, dann übernimmt das Plugin die Besucher-Verwaltung.
+* Es wird ein Block Menü angezeigt, damit ist die Galerie "Gefiltert". Um den Filter zu deaktivieren, muss der Besucher sein Alter auswählen. 
+Er wird dann auf die Seite zur Auswahl des Alters für Besucher (chartre.php) umgeleitet.
+
+In der Praxis wird der Besucher dann unter einem der durch das Plugin erstellten 2 Benutzer aufgezeichnet:
+\'18\' Zugehörigkeit zur Gruppe der über 18 jährigen und \'16\' zur Gruppe der 16-17 jährigen. 
+Diese 2 Gruppen Konten können nicht vom Benutzer geändert werden, sondern nur durch den Administrator.
+Sie öffnen und wählen das Aussehen, je nach Alter der Besucher über diese beiden Gruppen Konten. <br />
+<br />
+2.3 - Mögliche Anpassungen <br />
+<br />
+Sie können dieses Plugin für die nicht jugendfreien Inhalte anpassen, indem Sie einfach die Sprache des Plugins wechseln.
+(verwenden Sie einfach das Plugin "Local Files Editor") Die Altersgrenzen können auch auf diese Weise verändert werden.';
 ?>
