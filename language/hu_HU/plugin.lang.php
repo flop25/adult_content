@@ -37,4 +37,14 @@ $lang['ac_charte_user_def'] = 'státusz megváltoztatása';
 $lang['ac_not_def'] = 'Ez lényeges jog, többször nem kérdezi meg';
 $lang['ac_def'] = 'Szeretné megváltoztatni a státuszát ?';
 
+$lang['ad_c_block_on_index_error_2'] = 'Legalább a PWG_Stuffs 2.1.l verziója szükséges';
+$lang['ad_c_block_on_index_error'] = 'Jelenleg nem érhető el';
+$lang['ad_c_linktolang'] = 'Adult Content nyelvi fájl megnyitása (a LocalFiles Editort aktiválni kell)';
+$lang['ad_c_manage_both'] = 'erotikus és pornográf tartalmat';
+$lang['ad_c_manage_eroticonly'] = 'csak erotikus tartalmat';
+$lang['ad_c_manage_pornonly'] = 'csak pornográf tartalmat';
+$lang['ad_c_manage_what'] = 'Válassza ki a bővítmény által kezelt tartalom típusát:';
+$lang['ad_c_menublock_for_guest'] = 'A nem regisztráét felhasználók is választhatnak kort?';
+$lang['ad_c_msg_admin_1'] = 'A bővítmény beállítások mentése sikeres';
+$lang['ad_c_send'] = 'Változások mentése';
 ?>
