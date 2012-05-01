@@ -47,4 +47,5 @@ $lang['ad_c_manage_what'] = 'Válassza ki a bővítmény által kezelt tartalom 
 $lang['ad_c_menublock_for_guest'] = 'A nem regisztráét felhasználók is választhatnak kort?';
 $lang['ad_c_msg_admin_1'] = 'A bővítmény beállítások mentése sikeres';
 $lang['ad_c_send'] = 'Változások mentése';
+$lang['ad_c_block_on_index'] = 'Megtekinti az adatlapot a honlapon? (PWG_Stuffs bővítmény szükséges)';
 ?>
