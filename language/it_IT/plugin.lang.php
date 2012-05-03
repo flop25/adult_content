@@ -76,4 +76,9 @@ Potete adattare questo plugin per dei contenuti violenti, semplicemente cambiand
 Il limite di età può anche esso essere cambiato in questo modo.<br />
 ';
 
+$lang['ad_c_linktolang'] = 'Vai al file della lingua di Adult Content (necessità il LocalFiles Editor abilitato)';
+$lang['ad_c_manage_both'] = 'contenuto erotico e pornografico';
+$lang['ad_c_manage_eroticonly'] = 'solo contenuto erotico';
+$lang['ad_c_manage_pornonly'] = 'solo contenuto pornografico';
+$lang['ad_c_manage_what'] = 'Selezionare il tipo di contenuto che il plug-in dovrebbe gestire:';
 ?>
