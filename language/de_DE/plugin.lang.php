@@ -66,9 +66,6 @@ $lang['ac_text_activ_18'] = '<u> ... und ich versichere hiermit </ u>: <br>
 - <B>Dass ich nach den Gesetzen meines Landes über 18 Jahre alt bin und ein Erwachsener. </ B> <br>
 - Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
 - Die Gesetze meines Landes erlauben mir den Zutritt zu dieser Seite.';
-- <B> Das ich, nach den Gesetzen meines Landes, über 18 Jahre alt und Erwachsen bin. </ B> <br>
-- Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
-- Die Gesetze meines Landes erlauben mir, Zutritt zu dieser Seite.';
 $lang['ad_c_howitworks'] = 'Das Prinzip des Plugins ist, bei der Verwaltung von jugendfreien 
 Inhalten zu helfen (es kann auch für gewalttätige Inhalte angepasst 
 werden). Dazu verwaltet das Plugin die Besucher und/oder Nutzer nach 
