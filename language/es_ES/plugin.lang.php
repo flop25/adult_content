@@ -37,4 +37,15 @@ $lang['ac_charte_user_def'] = 'cambiar su estatuto';
 $lang['ac_not_def'] = 'Esta etapa es indispensable pero no le será pedida más más tarde';
 $lang['ac_def'] = 'Usted quiere cambiar su estatuto ?';
 
+$lang['ad_c_block_on_index_error_2'] = 'La versión mínima de PWG_Stuffs requerida es la 2.1.l';
+$lang['ad_c_block_on_index_error'] = 'No disponible de momento';
+$lang['ad_c_block_on_index'] = 'Ver un folleto en la página principal? (Requiere el plugin PWG_Stuffs)';
+$lang['ad_c_linktolang'] = 'Ir al archivo de lenguaje del Contenido para Adultos (se necesita tener habilitado el Editor LocalFiles)';
+$lang['ad_c_manage_both'] = 'contenido erótico y pornográfico';
+$lang['ad_c_manage_eroticonly'] = 'sólo contenido erótico';
+$lang['ad_c_manage_pornonly'] = 'sólo contenido pornográfico';
+$lang['ad_c_manage_what'] = 'Seleccione el tipo de contenido que el plugin debe manejar:';
+$lang['ad_c_menublock_for_guest'] = 'Permitir que usuarios no registrados puedan elegir a su edad?';
+$lang['ad_c_msg_admin_1'] = 'La configuración del plugin se ha actualizado con éxito!';
+$lang['ad_c_send'] = 'Grabar cambios';
 ?>
