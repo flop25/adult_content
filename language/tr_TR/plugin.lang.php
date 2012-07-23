@@ -53,4 +53,14 @@ $lang['ad_c_manage_what'] = 'Eklentinin yöneteceği içerik tipini seçin:';
 $lang['ad_c_menublock_for_guest'] = 'Kayıtlı olmayan kullanıcıların yaşlarını seçmelerine izin ver?';
 $lang['ad_c_msg_admin_1'] = 'Eklenti yapılandırması başarıyla kaydedildi!';
 $lang['ad_c_send'] = 'Değişiklikleri Kaydet';
+$lang['ac_text_activ_16'] = '<u> ... ve ben şerefim üzerine yemin ederim ki </u>: <br>
+        - <B>16 yada 17 yaşındayım</B> <br>
+- Bu sitenin pornografik ve erotik karakterler içeren resimleri yayınladığı konusunda uyarıldım.<br>
+- Ülkemdeki kanunlar bana bu siteye erişim hakkı vermektedir.';
+$lang['ac_text_activ_18'] = '  <u>... ve ben şerefim üzerine yemin ederim ki </u>: <br>
+- Ülkemdeki mevcut kanunlara göre <B>ben 18 yaşından büyüğüm ve  yetişkinim </B><br>
+- Bu sitenin pornografik ve erotik karakterler içeren resimleri yayınladığı konusunda uyarıldım.<br>
+- Ülkemdeki kanunlar bana bu siteye erişim hakkı vermektedir.';
+$lang['ac_text_charte'] = 'Bu site kendi rızası ile erişim yapacak yetişkinlere yöneliktir.
+(translation to be continued...)';
 ?>
