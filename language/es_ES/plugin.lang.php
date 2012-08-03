@@ -48,4 +48,31 @@ $lang['ad_c_manage_what'] = 'Seleccione el tipo de contenido que el plugin debe 
 $lang['ad_c_menublock_for_guest'] = 'Permitir que usuarios no registrados puedan elegir a su edad?';
 $lang['ad_c_msg_admin_1'] = 'La configuración del plugin se ha actualizado con éxito!';
 $lang['ad_c_send'] = 'Grabar cambios';
+$lang['ad_c_howitworks'] = 'El principio de este plugin es ayudar en la gestión de contenido para adultos (también puede ser
+
+adaptado a los contenidos violentos). Para ello, el plugin gestiona los visitantes y / o usuarios de los que desee, de acuerdo a su definición de los parámetros del plugin. <br />
+<br />
+1 - Como administrador, debe poner el contenido para adultos en una galería o álbum privado (el
+
+plugin no gestiona los derechos a nivel de imágenes en sí, al menos no todavía). Entonces
+
+asignar la galería o el álbum a los dos grupos de \'18 \'y\' 16-17 \'(creado por el plug-in)
+
+de esta manera: <br /> <br />
+
+-permitir que el grupo de \'18 \'pueda ver el contenido para adultos, reservado a los usuarios mayores de 18 años
+
+y el contenido normal (pero en general el contenido normal es a menudo público)
+<br /> <br />
+-permitir que el grupo "16-17" pueda ver el contenido para adultos reservado a los usuarios mayores de 16
+
+- Grupo "nada" puede ver el contenido normal (pero en general el contenido normal es a
+
+menudo público)
+<br />
+
+<br />
+2 - Funcionamiento de la plug-in<br />
+2.1 - Gestión de los usuarios <br />
+<br />';
 ?>
