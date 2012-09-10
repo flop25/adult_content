@@ -38,4 +38,42 @@ $lang['ac_charte_user_def'] = 'izmainiet savu statusu';
 $lang['ac_not_def'] = 'Šis posms ir svarīgs, bet turpmāk vairs jums netiks prasīts';
 $lang['ac_def'] = 'Vai vēlaties izmainīt savu statusu ?';
 
+$lang['ad_c_howitworks'] = 'Spraudņa uzdevums ir palīdzēt pieaugušajiem paredzētā satura pārvaldībā (to varētu pielāgot arī vardarbīga satura gadījumā). Lai to izdarītu, spraudnim jāpārvalda apmeklētājus un/vai lietotājus, pēc jūsu ieskatiem, balstoties uz jūsu definētiem spraudņa parametriem.<br/><br/>
+1 - Kā Administratoram jums ir jāizvieto savs pieaugušajiem paredzētais saturs privātā galerijā vai albūmā (spraidnis pats par sevi nepārvalda attēlu līmeņu tiesības, vismaz pagaidām).
+Tad piesaistiet galeriju vai albūmu divām grupām \'18\' un \' 16-17\' (spraudņa izveidoti), apmēram tā:<br/><br/>
+
+-atļaut grupai \'18\' skatīties pieaugušiem domāto saturu, rezervēts lietotājiem vecākiem par 18, un normāla rakstura saturu (bet parasti normāla rakstura saturs pieejams publiski) 
+<br/><br/>
+-atļaut grupai \' 16-17\' skatīties pieaugušiem domāto saturu, rezervēts lietotājiem vecākiem par 16, un normāla rakstura saturu (parasti normāla rakstura saturs pieejams publiski) 
+<br/><br/>
+- grupa \'nekas\' redzēs normāla rakstura saturu bet parasti normāla rakstura saturs pieejams publiski) 
+<br/><br/>
+2 - Spraudņa darbība<br/>
+2.1 - Lietotāju pārvaldība<br/>
+<br/>
+Ja lietotājs jau ir pierakstījies spraudņa aktivācijas laikā, spraudnis parāda mazu lodziņu, kur tiek prasīts uzrādīt lietotāja vecumu. Kad viņš tur uzklikšķina parādas lapa, kas satur ziņu \'pieaugušo saturs\', kur ir iespēja izvēlēties savu vecumu. (Charte_user.php).
+Kad lietotājs ir izvēlējies savu vecumu, tas tiek pāradresēts uz vecuma uzvēles lapu(Charte_user.php), izreiz pēc tā ierakstīšanas.
+
+Praksē spraudnis, pamatojoties uz lietotāja vecuma izvēles, var izvietot lietotāju 3 grupās:\' 18\' \' 16-17\' and \'nekas\'. Lietotājs, izmantojot adult_content blokizvēlni, jebkurā laikā var mainīt savu vecumu, izņemot gadījumu, kad to aizliedzis piwigo administrators (izmanību-tiešā saite uz charte_user.php turpina darboties kā parasti): ja vēlaties, lai lietotājs vairs nevar izmainīt savu vecumu, jums pa tiešo jāizmanto tiesību pārvaldnieks grupu un/vai attēlu līmenī, jo šis spraudnis to nedara.<br/><br/>
+
+2.2 - Apmeklētāju pārvaldība<br/><br/>
+Ja opcija \'Atļaut nereģistrētiem apmeklētājiem izvēlēties savu vecumu?\' ir iespējota, tad spraudnis parvaldīs apmeklētājus.*Tas parādīs blokizvēlni, norādot, ka galerija tiek \'filtrēta\' un, ja viņš vēlas atslēgt filtru, viņam jānorāda savs vecums. Tad tas tiek tiek pārsūtīts uz apmeklētāja vecuma izvēles lapu (chartre.php).
+Praksē spraudnis šos apmeklētājus ieraksta vienā no divām grupām:
+\'18\', kas pieder pie grupas \'18\', un \'16\', kas pieder pie grupas \'16-17\'. Šie divi lietotāju konti nevar tikt mainīti no lietotāju puses, to var tikai administrators.
+Jūs atverat un izvēlaties mainīt tēmu, pamatojoties uz apmeklētāja vecuma, izejot no šiem diviem lietotāju kontiem.<br/><br/> 
+ 
+2.3 - Iespējamā adaptācija<br/>
+<br/>
+Jūs varat pielāgot šo spraudni vardarbīga satura pārvaldīšanai, izmainot spraudņa valodu failus (ērtībai izmantojiet Lokālo Failu Redaktoru). Līdzīgā veidā iespējams pielāgot arī vecuma limitu.  ';
+$lang['ad_c_manage_what'] = 'Atlasiet satura tipu, kas spraidnim būtu jāpārvalda';
+$lang['ad_c_linktolang'] = 'Ejiet uz Saturs Pueaugušajiem valodas failu (jābūt iespējotam LocalFiles Redaktoram)';
+$lang['ad_c_msg_admin_1'] = 'Spraudņa konfigurācija atjaunināta sekmīgi!';
+$lang['ad_c_menublock_for_guest'] = 'Atļaut nereģistrētiem lietotājiem izvēlēties savu vecumu?';
+$lang['ad_c_send'] = 'Saglabāt Izmaiņas';
+$lang['ad_c_manage_both'] = 'erotiska un pornogrāfiska rakstura saturs';
+$lang['ad_c_manage_pornonly'] = 'tikai pornogrāfiska rakstura saturs';
+$lang['ad_c_manage_eroticonly'] = 'tikai erotiska rakstura saturs';
+$lang['ad_c_block_on_index'] = 'Skatīt bukletu mājas lapā? (Nepieciešams  PWG_Stuffs spraudnis) ';
+$lang['ad_c_block_on_index_error_2'] = 'Minimālā pieprasītā  PWG_Stuffs versija ir 2.1';
+$lang['ad_c_block_on_index_error'] = 'Pagaidām nav pieejams';
 ?>
