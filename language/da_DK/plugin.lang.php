@@ -63,4 +63,36 @@ $lang['ac_text_charte'] = 'Du bevæger dig ind på et websted, hvis visuelle ind
 <p>Hvis du ikke overholder betingelserne eller afgiver falske oplysninger, overtræder du måske lovene i dit land. og <B>påtager dig det fulde ansvar for dine handlinger</B>. Jeg erklærer at være blevet udtømmende oplyst om det beskrevne indhold og frasiger retten til at lægge sag an mod webstedets indholdsleverandør eller administratorer.  Jeg har omhyggeligt læst ovennævnte afsnit og underskriver elektronisk min aftale, som træder i kraft, når jeg klikker på knappen svarende til min alder.';
 $lang['ac_title_fermer'] = 'indhold filtreret';
 $lang['ac_title_menu'] = 'Advarsel';
+$lang['ad_c_howitworks'] = 'Formålet med plugin\'en er at hjælpe med at håndtere voksent indhold (den kan også tilpasses voldeligt indhold). Plugin\'en håndterer besøgende og/eller brugere jævnfør de opsætningsparametre, du har valgt.<br />
+<br />
+1 - Som administrator skal du placere dit voksenindhold i et privat galleri eller album (plugin\'en håndterer ikke tilladelser på billedniveau, eller i hvert fald endnu ikke). Dernæst tildeles galleriet eller albummet til to grupper \'18\' og \' 16-17\' (oprettes af plugin\'en) på denne måde:<br /><br />
+
+- tillad gruppen \'18\' at se voksenindhold, kun for brugere over 18 år samt normalt indhold (men generelt er normalt indhold ofte offentligt)
+<br /><br />
+- tillad gruppen \'16-17\' at se voksenindhold for brugere over 16 år samt normalt indhold (men generelt er normalt indhold ofte offentligt)
+<br /><br />
+- gruppen \'nothing\' vil kun se normalt indhold (men generelt er normalt indhold ofte offentligt)
+<br />
+<br />
+2 - Plugin\'ens virkemåde<br />
+2.1 - Håndtering af brugere<br />
+<br />
+Hvis brugeren allerede findes når plugin\'en aktiveres, viser plugin\'en en lille blok, som fortæller at vedkommende skal oplyse sin alder.  Når vedkommende klikker vil siden indeholdende voksenindhold vise sig og der kan vælges en alder (Charte_user.php).
+
+Når en besøgende har valgt sin alder, sendes vedkommende tilbage til siden med valg af alder (Charte_user.php), straks oplysningen er gemt.
+
+I praksis placerer plugin\'en brugeren i en af de tre grupper, \'18\' \'16-17\' og \'nothing\', alt efter hvilken alder, der blev angivet.  En bruger kan på ethvert tidspunkt ændre sin alder via blokmenu i adult_content, bortset fra hvis den er deaktiveret Piwigos administration (bemærk at det direkte link til charte_user.php fortsat fungerer på samme måde): ønsker du, at en bruger ikke kan ændre sin alder, er denne plugin nytteløs, brug i stedet direkte håndtering af tilladelser på gruppe- og/eller billedniveau.<br />
+<br />
+2.2 - Håndtering af besøgende<br />
+<br />
+Hvis valgmuligheden \'Tillad ikke-registrerede besøgende at vælge deres alder?\' er aktiveret, vil plugin\'en håndtere de besøgende. 
+* Den viser en blokmenu, som indikerer at galleriet er \'filtreret\' og hvis vedkommende ønsker at deaktivere filteret, skal denne vælge sin alder. Vedkommende sendes til siden for besøgende til valg af alder (chartre.php).
+
+I praksis gemmer plugin\'en den besøgende i en af to brugere oprettet af plugin\'en: 
+\'18\' hørende til gruppen \'18\', og \'16\' fra gruppen \'16-17\'.  Disse to brugerkonti må ikke ændres af brugerne, kun af administratoren.
+Man åbner og vælger tema jævnfør den besøgendes alder via disse to brugerkonti.<br />
+<br />
+2.3 - Mulige tilpasninger<br />
+<br />
+Du kan tilpasse plugin\'en til voldeligt indhold ved simpelthen at ændre formuleringer i plugin\'ens filer (brug plugin\'en Local Files Editor for at lette arbejdet).  Aldersbegrænsingen kan ændres på samme måde.';
 ?>
