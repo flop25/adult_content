@@ -22,7 +22,7 @@
 // +-----------------------------------------------------------------------+
 $lang['ac_button_activ_16'] = 'Erotik içeriği etkinleştir';
 $lang['ac_button_activ_18'] = 'Pornografik içeriği etkinleştir';
-$lang['ac_charte_user_def'] = 'veya ayrıca buraya tıkla';
+$lang['ac_charte_user_def'] = 'veya diğer durumda buraya tıkla';
 $lang['ac_charte_user_not'] = 'Lütfen yaşınızı seçin!';
 $lang['ac_def'] = 'Durumunuzu değiştirmek istiyor musunuz ?';
 $lang['ac_fermer'] = 'veya kapat';
