@@ -52,4 +52,12 @@ $lang['ad_c_manage_what'] = 'Wybierz rodzaj zawartości, którą chcesz zarządz
 $lang['ad_c_menublock_for_guest'] = 'Pozwalać niezarejestrowanym użytkownikom aby wybierali wiek?';
 $lang['ad_c_msg_admin_1'] = 'Konfiguracja pluginu zaktualizowana pomyślnie';
 $lang['ad_c_send'] = 'Zapisz zmiany';
+$lang['ac_text_activ_16'] = '<u>... i zaręczam, że </u>: <br />
+- <B>Mam ukończony 16 lub 17 rok życia.</B> <br />
+- Zostałem ostrzeżony, że strona ta zawiera materiały o charakterze pornograficznym i erotycznym. <br />
+- Prawo mojego kraju zezwala mi na przeglądanie tej witryny.';
+$lang['ac_text_activ_18'] = '<u>... i zaręczam, że:</u><br />
+- <b>Mam ukończone co najmniej 18 lat</b> i według prawa obowiązującego w moim kraju <b>jestem pełnoletni.</b>
+- Zostałem ostrzeżony, że strona ta zawiera materiały o charakterze pornograficznym i erotycznym.<br />
+- Prawo mojego kraju zezwala mi na przeglądanie tej witryny.';
 ?>
