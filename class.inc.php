@@ -18,7 +18,7 @@ class Adultcontent
 
     $query = 'SELECT group_id FROM ' . USER_GROUP_TABLE . ' WHERE user_id = ' . $user['id'] . ';';
     $result = pwg_query($query);
-    while ($row = mysql_fetch_assoc($result))
+    while ($row = pwg_db_fetch_assoc($result))
     {
       array_push($this->idgroups_user, $row['group_id']);
     }
@@ -29,7 +29,7 @@ class Adultcontent
 
     $query = 'SELECT id FROM ' . GROUPS_TABLE . ' WHERE name IN (\'+18\', \'16-17\', \'nothing\') ORDER BY id';
     $result = pwg_query($query);
-    while ($row = mysql_fetch_assoc($result))
+    while ($row = pwg_db_fetch_assoc($result))
     {
       array_push($this->idgroups_ad_c, $row['id']);
     }
@@ -130,22 +130,22 @@ class Adultcontent
 SELECT id FROM '.GROUPS_TABLE.'
   WHERE name IN (\'+18\')
 ;';
-     $data_18 = mysql_fetch_array(pwg_query($query));
+     $data_18 = pwg_db_fetch_array(pwg_query($query));
 	 $query = '
 SELECT id FROM '.GROUPS_TABLE.'
   WHERE name IN (\'16-17\')
 ;';
-     $data_16 = mysql_fetch_array(pwg_query($query));
+     $data_16 = pwg_db_fetch_array(pwg_query($query));
 	 $query = '
 SELECT id FROM '.GROUPS_TABLE.'
   WHERE name IN (\'nothing\')
 ;';
-     $data_no = mysql_fetch_array(pwg_query($query));
+     $data_no = pwg_db_fetch_array(pwg_query($query));
 	 $n_query = '
 SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
   WHERE group_id IN (\''.$data_18['id'].'\',\''.$data_16['id'].'\',\''.$data_no['id'].'\') AND user_id IN (\''.$user['id'].'\')
 ;';
-      $data_user = mysql_fetch_array(pwg_query($n_query));
+      $data_user = pwg_db_fetch_array(pwg_query($n_query));
 	  $is_grouped = $data_user['result'];   
 	  
 	  if ( $is_grouped == 0 and $user['username'] !== '16' and $user['username'] !== '18')
@@ -163,7 +163,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
     $this->loading_lang();
     global $user, $conf, $page, $template;
     $menu = & $menu_ref_arr[0];
-		$conf_plugin = explode("," , $conf['ad_c_plugin']);
+		$conf_plugin = unserialize($conf['ad_c_plugin']);
 		$template->assign(
 			array(
 				'AC_NAME' => AC_NAME
@@ -171,7 +171,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 
 
     //include($this->var_template());
-    if (is_a_guest() and $conf_plugin[0]=='true')
+    if (is_a_guest() and $conf_plugin['menublock_for_guest']=='true')
 	{
 	
 ///////////////////////[gestion fermer/ouvert]////////////////////
@@ -216,7 +216,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 	  }
 ///////////////////////[FIN fermer/ouvert]////////////////////
     }//fin if guest
-    elseif (is_a_guest() and $conf_plugin[0]!='true')
+    elseif (is_a_guest() and $conf_plugin['menublock_for_guest']!='true')
     {  
 		  $menu->hide_block('mbAdultContent');
     }
@@ -316,6 +316,18 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
 			log_user( $user_id, false);
       redirect(PHPWG_ROOT_PATH.'plugins/adult_content/charte_user.php');
 		}
-  } 
+  }
+  function ac_stuffs_module($modules)
+  {
+    load_language('plugin.lang', $this->plugin_path);
+    array_push($modules, array(
+      'path' => PHPWG_PLUGINS_PATH . AC_NAME . '/stuffs_module/',
+      'name' => l10n('ac_text'),
+      'description' => l10n('ac_stuffs_description'),
+      )
+    );
+    return $modules;
+  }
+
 }//fin class
 ?>

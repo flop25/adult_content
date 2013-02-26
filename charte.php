@@ -1,8 +1,8 @@
 <?php
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
-$conf_ad_c = explode("," , $conf['ad_c_plugin']);
-if ( !is_a_guest() or $conf_ad_c[0]!='true')
+$conf_ad_c = unserialize($conf['ad_c_plugin']);
+if ( !is_a_guest() or $conf_ad_c['menublock_for_guest']!='true')
 {
 	redirect(make_index_url());
 }
@@ -22,7 +22,7 @@ load_language('lang', PHPWG_ROOT_PATH.PWG_LOCAL_DIR, array('no_fallback'=>true, 
 $template->assign(
   array(
     'PLUGIN_NAME' => $adult_content->plugin_name,
-    'AD_C_manage_what' => $conf_ad_c[2],
+    'AD_C_manage_what' => $conf_ad_c['manage_what'],
     ));
 $template->set_filename('controller', $adult_content->plugin_path.'include/charte.tpl');
 

@@ -34,6 +34,8 @@ add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identific
 global $conf;
 add_event_handler('loc_begin_index', array(&$adult_content, 'set_block_on_index'));
 */
+add_event_handler('get_stuffs_modules', array(&$adult_content, 'ac_stuffs_module'));
+
 
 add_event_handler('loc_end_picture', 'comment_manage');
 function comment_manage()

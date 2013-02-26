@@ -1,7 +1,7 @@
 <?php
 define('PHPWG_ROOT_PATH','../../');
 include_once(PHPWG_ROOT_PATH.'include/common.inc.php');
-$conf_ad_c = explode("," , $conf['ad_c_plugin']);
+$conf_ad_c = unserialize($conf['ad_c_plugin']);
 $adult_content = get_plugin_data('adult_content');
 if ( is_a_guest() or $user['username'] == '16' or $user['username'] == '18')
 {
@@ -17,7 +17,7 @@ elseif ( isset($_POST['groupe']) and ( $_POST['groupe'] == '+18' or $_POST['grou
 SELECT id FROM '.GROUPS_TABLE.'
   WHERE name IN (\''. $_POST['groupe'].'\')
 ;';
-      $data_group = mysql_fetch_array(pwg_query($query));
+      $data_group = pwg_db_fetch_array(pwg_query($query));
 	  
       if (!$adult_content->is_in_ad_c_group())
 	  {
@@ -85,7 +85,7 @@ elseif (!isset( $_POST['groupe'] ))
    }
     $template->assign(
     array(
-      'AD_C_manage_what' => $conf_ad_c[2],
+      'AD_C_manage_what' => $conf_ad_c['manage_what'],
     )
     );
 

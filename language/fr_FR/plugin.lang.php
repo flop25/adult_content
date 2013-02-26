@@ -82,4 +82,6 @@ Vous pouvez adapter ce plugin pour du contenu violent, simplement en changeant l
 Les âges limites peuvent aussi être changés de cette façon.<br />
 ';
 $lang['ad_c_linktolang']="Lien vers le fichier langue d'Adult Content (Nécessite localFiles Editor)";
+
+$lang['ac_stuffs_description']="Charte pour le visiteur et choix de son âge"
 ?>
