@@ -47,11 +47,11 @@ INSERT INTO '.GROUPS_TABLE.'
 	  pwg_query('INSERT INTO '.USER_GROUP_TABLE.' VALUES(\''.$conf['guest_id'].'\', \''.$data_group['id'].'\' )' );
 
 /////////////Config plugin
-    $config_start=array('menublock_for_guest'=>true,'block_on_index'=>false,'manage_what'=>'both');
+    $config_start=array('menublock_for_guest'=>true,'manage_what'=>'both');
     $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 	VALUES
-	("ad_c_plugin" , "'.pwg_db_real_escape_string(serialize($config_start)).'" , "Plugin adult_content : menublock_for_guest, block_on_index, manage_what");';
+	("ad_c_plugin" , "'.pwg_db_real_escape_string(serialize($config_start)).'" , "Plugin adult_content : menublock_for_guest, manage_what");';
     pwg_query($q);
 
 }
@@ -123,11 +123,11 @@ function plugin_activate()
 	$exist = $data_table['result'];
 	if ( $exist == 0 )
 	{
-	  $config_start=array('menublock_for_guest'=>true,'block_on_index'=>false,'manage_what'=>'both');
+	  $config_start=array('menublock_for_guest'=>true,'manage_what'=>'both');
     $q = '
     INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
     VALUES
-      ("ad_c_plugin" , "'.pwg_db_real_escape_string(serialize($config_start)).'" , "Plugin adult_content : menublock_for_guest, block_on_index, manage_what");';
+      ("ad_c_plugin" , "'.pwg_db_real_escape_string(serialize($config_start)).'" , "Plugin adult_content : menublock_for_guest, manage_what");';
     pwg_query($q);
 	} 
 	else {
@@ -139,12 +139,12 @@ function plugin_activate()
     $cf=@unserialize($data_conf);
     $nbr=count($cf);
 	
-	  if ($nbr!=3)
+	  if ($nbr!=2)
 	  {
-      $config_start=array('menublock_for_guest'=>true,'block_on_index'=>false,'manage_what'=>'both');
+      $config_start=array('menublock_for_guest'=>true,'manage_what'=>'both');
       $q = '
       UPDATE ' . CONFIG_TABLE . ' SET
-      param="ad_c_plugin", value="'.pwg_db_real_escape_string(serialize($config_start)).'", comment="Plugin adult_content : menublock_for_guest, block_on_index, manage_what"
+      param="ad_c_plugin", value="'.pwg_db_real_escape_string(serialize($config_start)).'", comment="Plugin adult_content : menublock_for_guest, manage_what"
       WHERE param IN (\'ad_c_plugin\');';
       pwg_query($q);
     }

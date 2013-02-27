@@ -73,7 +73,4 @@ $lang['ad_c_send'] = 'Saglabāt Izmaiņas';
 $lang['ad_c_manage_both'] = 'erotiska un pornogrāfiska rakstura saturs';
 $lang['ad_c_manage_pornonly'] = 'tikai pornogrāfiska rakstura saturs';
 $lang['ad_c_manage_eroticonly'] = 'tikai erotiska rakstura saturs';
-$lang['ad_c_block_on_index'] = 'Skatīt bukletu mājas lapā? (Nepieciešams  PWG_Stuffs spraudnis) ';
-$lang['ad_c_block_on_index_error_2'] = 'Minimālā pieprasītā  PWG_Stuffs versija ir 2.1';
-$lang['ad_c_block_on_index_error'] = 'Pagaidām nav pieejams';
 ?>

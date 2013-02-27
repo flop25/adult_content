@@ -30,10 +30,6 @@ add_event_handler('blockmanager_register_blocks', array(&$adult_content, 'regist
 add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identification'));
 //block on index
 
-/*
-global $conf;
-add_event_handler('loc_begin_index', array(&$adult_content, 'set_block_on_index'));
-*/
 add_event_handler('get_stuffs_modules', array(&$adult_content, 'ac_stuffs_module'));
 
 

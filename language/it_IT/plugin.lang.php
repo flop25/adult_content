@@ -38,9 +38,6 @@ $lang['ac_not_def'] = 'Questa operazione è fondamentale ma non vi sarà più ri
 $lang['ac_def'] = 'Volete cambiare il vostro stato?';
 
 $lang['ad_c_menublock_for_guest'] = 'Permettere ai visitatori di selezionare la loro età?';
-$lang['ad_c_block_on_index'] = 'Visualizzare un flyer sulla home page ? (Necessita il plugin PWG Stuffs)';
-$lang['ad_c_block_on_index_error_2'] = 'PWG_Stuffs versione minima necessaria è 2.1.l';
-$lang['ad_c_block_on_index_error'] = 'funzione non disponibile attualmente';
 $lang['ad_c_send'] = 'Salvare le modifiche';
 $lang['ad_c_msg_admin_1'] = 'Configurazione del plugin aggiornata correttamente!';
 $lang['ad_c_howitworks'] = 'Il principio del plugin è di aiutare nella gestione di contenuti per adulti (può essere adattato per i contenuti violenti). Per ciò, il plugin gestisce i visitatori e/o gli utenti (a scelta a seconda delle impostazioni del plugin).<br />

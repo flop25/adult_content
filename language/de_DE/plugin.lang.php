@@ -40,7 +40,6 @@ $lang['ac_user_no_s'] = 'Inhalt gefiltert';
 $lang['ac_user_no'] = 'Sie möchten nicht, diese Art von Inhalt aktivieren';
 $lang['ac_user_text_16'] = 'Sie sind 16 oder 17 Jahre alt';
 $lang['ac_user_text_18'] = 'Sie sind älter als 18 Jahre';
-$lang['ad_c_block_on_index_error'] = 'Zur Zeit nicht verfügbar';
 $lang['ad_c_menublock_for_guest'] = 'Erlaube unregistrierten Benutzern das Alter auszuwählen?';
 $lang['ad_c_send'] = 'Änderungen speichern';
 $lang['ac_not_def'] = 'Dieser Vorgang ist wichtig, wird aber nicht noch einmal erfragt';
@@ -50,8 +49,6 @@ Diese Webseite spricht nur bereitwillige Personen an.
 Die vorliegende Webseite lehnt jede Verantwortung für die durch den Inhalt und deren Dienste schockierten Personen ab. 
 Jede Person, die trotz eingehender Warnung, ihre Zustimmung zum betreten dieser Seite gibt, befreit diese Seite von allen Konsequenzen daraus.</ p>
 <p> Wenn ich eine dieser Zusagen nicht einhalte oder eine falsche Erklärung abgebe, kann ich eventuell die Gesetze meines Landes verletzen, und <B> übernehme damit die volle Verantwortung für mein Handeln </ B>. Ich erkläre hiermit, vollständig über die angebotenen Inhalte informiert worden zu sein und verzichte auf irgendwelche rechtlichen Schritte gegen den Provider und den Administrator dieser Webseite. Ich lese aufmerksam vorstehende Absätze und gebe elektronisch mein Einverständnis, indem ich mein entsprechendes Alter anklicke.';
-$lang['ad_c_block_on_index_error_2'] = 'Die minimale PWG_Stuffs Version die erforderlich ist, ist 2.1.l';
-$lang['ad_c_block_on_index'] = 'Sehen Sie einen Flyer auf der Homepage? (Benötigt Plugin PWG_Stuffs)';
 $lang['ad_c_linktolang'] = 'Gehen Sie auf die Sprach-Datei von nicht jugendfreien Inhalten (Benötigen LocalFiles Editor aktiviert)';
 $lang['ad_c_manage_both'] = 'erotische und pornografische Inhalte';
 $lang['ad_c_manage_eroticonly'] = 'nur erotische Inhalte';

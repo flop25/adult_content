@@ -38,9 +38,6 @@ $lang['ac_not_def'] = 'This stage is essential but not will be asked to you anym
 $lang['ac_def'] = 'Do you want to change your status ?';
 
 $lang['ad_c_menublock_for_guest'] = 'Allow unregistered users to select their age?';
-$lang['ad_c_block_on_index'] = 'View a flyer on the homepage? (Requires plugin PWG_Stuffs)';
-$lang['ad_c_block_on_index_error_2'] = 'The minimum PWG_Stuffs version required is 2.1.l';
-$lang['ad_c_block_on_index_error'] = 'Not available for now';
 $lang['ad_c_manage_what'] = 'Select the type of content the plugin should manage :';
 $lang['ad_c_manage_eroticonly'] = 'erotic content only';
 $lang['ad_c_manage_pornonly'] = 'pornographic content only';
@@ -124,4 +121,8 @@ of the plugin (use the plugin Local Files Editor for more ease).  The age limits
 be changed in this way.
 ";
 $lang['ad_c_linktolang']="Go to the language file of Adult Content (need LocalFiles Editor enabled)";
+
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages']="NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages";
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content']="Disclaimer for the guest, with the ability to choose its age";
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page']='No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page';
 ?>

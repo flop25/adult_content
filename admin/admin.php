@@ -15,7 +15,6 @@ if (isset($_POST['option_ad_c']))
 {
   $newconf_plugin=array();
 	$newconf_plugin['menublock_for_guest'] = (isset($_POST['menublock_for_guest'])) ? true : false;
-	$newconf_plugin['block_on_index'] = (isset($_POST['block_on_index'])) ? true : false;
 	$newconf_plugin['manage_what'] = (isset($_POST['manage_what'])) ? $_POST['manage_what'] : 'both';
 	$query = '
 		UPDATE '.CONFIG_TABLE.'
@@ -32,17 +31,15 @@ if (isset($_POST['option_ad_c']))
 
 $check='checked="checked"';
 if ($conf_ad_c['menublock_for_guest']=='true') { $menublock=$check; } else { $menublock=NULL; } 
-if ($conf_ad_c['block_on_index']=='true') { $index=$check; } else { $index=NULL; }
-$disabled='disabled="disabled"';
-	$template->assign(
-		array(
-		  'AD_C_manage_what' => $conf_ad_c['manage_what'],
-		  'AD_C_menublock_for_guest' => $menublock,
-		  'AD_C_block_on_index' => $index,
-		  'AD_C_block_on_index_disabled' => $disabled,
-		  'AD_C_LANG' => $user['language'],
-		)
-	  );
+$template->assign(
+  array(
+    'AD_C_manage_what' => $conf_ad_c['manage_what'],
+    'AD_C_menublock_for_guest' => $menublock,
+    'AD_C_LANG' => $user['language'],
+  )
+  );
+
+
 $template->set_filename('plugin_admin_content', $ad_c->plugin_path.'admin/admin.tpl');
 $template->assign_var_from_handle('ADMIN_CONTENT', 'plugin_admin_content');
 ?>

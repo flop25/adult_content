@@ -37,9 +37,6 @@ $lang['ac_charte_user_def'] = 'jinak klikněte zde';
 $lang['ac_not_def'] = 'Tato část je důležitá ale již nebudete znovu tázán.';
 $lang['ac_def'] = 'Chcete změnit svůj stav?';
 
-$lang['ad_c_block_on_index_error_2'] = 'Vyžaduje PWG_Stuffs ve verzi alespoň 2.1.l';
-$lang['ad_c_block_on_index_error'] = 'Momentálně není k dispozici';
-$lang['ad_c_block_on_index'] = 'Zobrazit leták na hlavní stránce? (Vyžaduje plugin PWG_Stuffs)';
 $lang['ad_c_linktolang'] = 'Jděte do jazykového souboru Adult Content (nutno mít povolený LocalFiles Editor)';
 $lang['ad_c_manage_both'] = 'erotický a pornografický obsah';
 $lang['ad_c_manage_eroticonly'] = 'pouze erotický obsah';

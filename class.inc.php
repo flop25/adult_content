@@ -117,46 +117,6 @@ class Adultcontent
 		}
   }
 
-  function set_block_on_index ()
-  {
-	$this->loading_lang();
-	global $page, $template, $user, $conf;
-
-	if (isset($page['section']) and $page['section'] == 'categories')
-
-	{
-		////////////lié à quoi/////	
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'+18\')
-;';
-     $data_18 = pwg_db_fetch_array(pwg_query($query));
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'16-17\')
-;';
-     $data_16 = pwg_db_fetch_array(pwg_query($query));
-	 $query = '
-SELECT id FROM '.GROUPS_TABLE.'
-  WHERE name IN (\'nothing\')
-;';
-     $data_no = pwg_db_fetch_array(pwg_query($query));
-	 $n_query = '
-SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
-  WHERE group_id IN (\''.$data_18['id'].'\',\''.$data_16['id'].'\',\''.$data_no['id'].'\') AND user_id IN (\''.$user['id'].'\')
-;';
-      $data_user = pwg_db_fetch_array(pwg_query($n_query));
-	  $is_grouped = $data_user['result'];   
-	  
-	  if ( $is_grouped == 0 and $user['username'] !== '16' and $user['username'] !== '18')
-	  {
-		$template->set_filename('ac_block', realpath($this->get_template('block.tpl') ) );
-		$begin = 'PLUGIN_INDEX_CONTENT_BEFORE';
-		$end = 'PLUGIN_INDEX_CONTENT_AFTER';
-		$template->concat($begin,	$template->parse('ac_block', true));
-	  }
-	}
-  }
   function placer_identification($menu_ref_arr)
   {
 ///////////////////////[début du plug]////////////////////
@@ -323,7 +283,7 @@ SELECT COUNT(*) AS result FROM '.USER_GROUP_TABLE.'
     array_push($modules, array(
       'path' => PHPWG_PLUGINS_PATH . AC_NAME . '/stuffs_module/',
       'name' => l10n('ac_text'),
-      'description' => l10n('ac_stuffs_description'),
+      'description' => l10n('Disclaimer for the guest, with the ability to choose its age'),
       )
     );
     return $modules;

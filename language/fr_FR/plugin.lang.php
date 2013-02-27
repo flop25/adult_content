@@ -38,9 +38,6 @@ $lang['ac_not_def'] = 'Cette étape est indispensable mais ne vous sera plus dem
 $lang['ac_def'] = 'Voulez-vous changez votre statut ?';
 
 $lang['ad_c_menublock_for_guest'] = 'Permettre aux visiteurs non-enregistrés de sélectionner leur âge ?';
-$lang['ad_c_block_on_index'] = 'Afficher un encart sur la page d\'accueil ? (Nécessite le plugin PWG Stuffs)';
-$lang['ad_c_block_on_index_error_2'] = 'PWG Stuffs dans une version supérieure à 2.1.l est nécessaire';
-$lang['ad_c_block_on_index_error'] = 'fonction non disponible pour l\'instant';
 
 $lang['ad_c_manage_what'] = 'Le plugin gère le contenu';
 $lang['ad_c_manage_eroticonly'] = 'érotique seulement';
@@ -83,5 +80,7 @@ Les âges limites peuvent aussi être changés de cette façon.<br />
 ';
 $lang['ad_c_linktolang']="Lien vers le fichier langue d'Adult Content (Nécessite localFiles Editor)";
 
-$lang['ac_stuffs_description']="Charte pour le visiteur et choix de son âge"
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages']="Nouveau ! Utilisez le plugin PWG STuffs pour ajouter la charte sur les pages d'accueil et d'albums";
+$lang['Disclaimer for the guest, with the ability to choose its age']="Charte pour le visiteur, avec la possibilité qu'il choisisse son âge";
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page']='Pas d\'options, juste cochez "Permettre aux visiteurs non-enregistrés de sélectionner leur âge" sur la page d\'administration d\'Adult content';
 ?>
