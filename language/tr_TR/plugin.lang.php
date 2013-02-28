@@ -133,4 +133,7 @@ You can adapt this plugin for the violent content, simply by changing the files 
 of the plugin (use the plugin Local Files Editor for more ease).  The age limits may also
 
 be changed in this way.';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Hiç bir seçenek belirtilmemiş. Adult Content yönetim sayfasında "Kayıtlı kullanıcıların kendi yaşlarını seçebilmelerine izin verilsin mi?" seçili olsun.';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'YENİ! Dizin/albüm sayfalarına feragatname eklemek için PWG Stuffs eklentisini kontrol edin';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Misafiler için yaş seçme olanağı bulunan feragatname';
 ?>
