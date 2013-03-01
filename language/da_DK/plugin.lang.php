@@ -92,4 +92,7 @@ Man åbner og vælger tema jævnfør den besøgendes alder via disse to brugerko
 2.3 - Mulige tilpasninger<br />
 <br />
 Du kan tilpasse plugin\'en til voldeligt indhold ved simpelthen at ændre formuleringer i plugin\'ens filer (brug plugin\'en Local Files Editor for at lette arbejdet).  Aldersbegrænsingen kan ændres på samme måde.';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Ansvarsfralæggelse til gæsten, med mulighed for at angive alder';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NYT! Vælg plugin\'en PWG Stuffs for at kunne tilføje en ansvarsfraskivelse på indeks-/albumsider';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Ingen valgmuligheder. Vælg blot "Giv ikke-registrerede brugere mulighed for at vælge deres alder?" på Adult Contents administrationsside';
 ?>
