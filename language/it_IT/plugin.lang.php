@@ -78,4 +78,7 @@ $lang['ad_c_manage_both'] = 'contenuto erotico e pornografico';
 $lang['ad_c_manage_eroticonly'] = 'solo contenuto erotico';
 $lang['ad_c_manage_pornonly'] = 'solo contenuto pornografico';
 $lang['ad_c_manage_what'] = 'Selezionare il tipo di contenuto che il plug-in dovrebbe gestire:';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Nessuna opzione. Basta controllare "Consenti agli utenti non registrati di selezionare la loro età?" nella pagina di amministrazione di Adult Content';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NEW! Controllare il plugin PWG Stuffs per aggiungere il disclaimer su indice/album pagine';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Disclaimer per gli ospiti, con la possibilità di scegliere la sua età';
 ?>
