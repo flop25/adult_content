@@ -120,4 +120,7 @@ Sie öffnen und wählen das Aussehen, je nach Alter der Besucher über diese bei
 <br />
 Sie können dieses Plugin für die nicht jugendfreien Inhalte anpassen, indem Sie einfach die Sprache des Plugins wechseln.
 (verwenden Sie einfach das Plugin "Local Files Editor") Die Altersgrenzen können auch auf diese Weise verändert werden.';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Keine Optionen. Aktiviere "Erlaube nicht registrierten Besuchern das Alter auszuwählen?" auf der Aduld Content Administrations Seite.';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Hinweis für Gäste mit der Möglichkeit das Alter auszuwählen';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NEU! Prüfe das Plugin PWG Stuffs um eine Erklärung für die Startseite und die  Albumseiten zu erstellen.';
 ?>
