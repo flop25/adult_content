@@ -73,4 +73,7 @@ $lang['ad_c_send'] = 'Saglabāt Izmaiņas';
 $lang['ad_c_manage_both'] = 'erotiska un pornogrāfiska rakstura saturs';
 $lang['ad_c_manage_pornonly'] = 'tikai pornogrāfiska rakstura saturs';
 $lang['ad_c_manage_eroticonly'] = 'tikai erotiska rakstura saturs';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'JAUNUMS! Atzīmējiet Plugin PWG Stuffs, lai indeksa / albums lapā pievienotu atrunu';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Atruna par viesis ar iespēju izvēlēties savu vecumu';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Nav opciju. Vienkārši pieaugušo satura administrācijas lapā atzīmējiet "Atļaut nereģistrētiem lietotājiem izvēlēties savu vecumu?"';
 ?>
