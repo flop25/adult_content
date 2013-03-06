@@ -72,4 +72,7 @@ menudo público)
 2 - Funcionamiento de la plug-in<br />
 2.1 - Gestión de los usuarios <br />
 <br />';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Descargo de responsabilidad para el cliente, con la posibilidad de elegir su edad';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = '¡NUEVO! Compruebe el PWG Stuffs Plugin para añadir el descargo de responsabilidad en las páginas de índice / álbum';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'No hay opciones. Sólo tienes que comprobar "Permitir a los usuarios no registrados para elegir a su edad?" en la página de administración Contenido Adulto';
 ?>
