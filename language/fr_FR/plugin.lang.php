@@ -83,4 +83,5 @@ $lang['ad_c_linktolang']="Lien vers le fichier langue d'Adult Content (Nécessit
 $lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages']="Nouveau ! Utilisez le plugin PWG STuffs pour ajouter la charte sur les pages d'accueil et d'albums";
 $lang['Disclaimer for the guest, with the ability to choose its age']="Charte pour le visiteur, avec la possibilité qu'il choisisse son âge";
 $lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page']='Pas d\'options, juste cochez "Permettre aux visiteurs non-enregistrés de sélectionner leur âge" sur la page d\'administration d\'Adult content';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Charte pour les invités, avec possibilité de choisir son age';
 ?>
