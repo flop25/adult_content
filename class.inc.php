@@ -231,7 +231,7 @@ class Adultcontent
 				if ( isset($conf['UserAdvManager']) )
 				{
 					$conf_UAM_2 = unserialize($conf['UserAdvManager']);
-					if ( in_array($conf_UAM_2[2], $this->idgroups_user))/// $conf_UAM_2[2] est le groupe des user en attente de modération
+					if ( in_array($conf_UAM_2['NO_CONFIRM_GROUP'], $this->idgroups_user))/// $conf_UAM_2[2] est le groupe des user en attente de modération
 					{
 						$menu->hide_block('mbAdultContent');
 					}
