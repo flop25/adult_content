@@ -39,4 +39,6 @@ $lang['ac_text_activ_16'] = '<u>...en ik garandeer eervol dat</u>:<br>
  - <B>Ik 16 of 17 jaar oud ben</B><br>
 - Ik ben gewaarschuwd dat deze site pornografische of erotische inhoud kan bevatten.
 - De wetten in mijn land staan me toe om deze site te bezoeken.';
+$lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NIEUW! Bekijk de PWG Stuff plugin om de disclaimer op de index.album pagina\'s te plaatsen';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Disclaimer voor de gast, met de mogelijkheid om leeftijd te kieen';
 ?>
