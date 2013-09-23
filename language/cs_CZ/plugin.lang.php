@@ -82,4 +82,5 @@ Skrze tyto dva účty závislé na věku návštěvníků můžete ovlivnit co s
 2.3 - Možné adaptace<br/>
 <br/>
 Tento plugin může být adaptován pro zobrazování obsahu obsahujícího násilí tak, že změníte jazykové soubory tohoto pluginu (použijte plugin Local Files Editor pro větší jednoduchost). Věkové limity mohou taktéž být změněny touto cestou.';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Upozornění pro uživatele s možností zvolit si svůj věk';
 ?>
