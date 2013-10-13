@@ -24,11 +24,7 @@ $lang['ac_text_activ_18'] = '  <u>... e garantisco sul mio onore che </u>: <br>
 - <B>Io ho più di 18 anni e che sono maggiorenne </B> secondo le leggi in vigore nel mio paese. <br>
 - Sono al corrente che il sito propone delle foto a carattere pornografico e/o erotico. <br>
 - Le leggi della mia nazione mi autorizzano ad accedere a questo sito.';
-- Le leggi del mio paese mi autorizzano ad accedere a questo sito.';
 $lang['ac_text_activ_16'] = '<u> ... e garantisco sul mio onore che </u>: <br>
-        - <B>Io ho 16 o 17 anni.</B> <br>
-- Sono al corrente che il sito propone delle foto a carattere pornografico ed erotico. <br>
-- Le leggi della mia nazione mi autorizzano ad accedere a questo sito.';
         - <B>Io ho 16 o 17 anni.</B> <br>
 - Sono al corrente che il sito propone delle foto a carattere pornografico ed erotico. <br>
 - Le leggi del mio paese mi autorizzano ad accedere a questo sito.';
