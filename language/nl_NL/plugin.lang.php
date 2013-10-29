@@ -41,4 +41,15 @@ $lang['ac_text_activ_16'] = '<u>...en ik garandeer eervol dat</u>:<br>
 - De wetten in mijn land staan me toe om deze site te bezoeken.';
 $lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NIEUW! Bekijk de PWG Stuff plugin om de disclaimer op de index.album pagina\'s te plaatsen';
 $lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Disclaimer voor de gast, met de mogelijkheid om leeftijd te kieen';
+$lang['ac_title_menu'] = 'Waarschuwing';
+$lang['ac_title_menu_statut'] = 'Informatie';
+$lang['ac_user_no'] = 'Je wilde deze content niet activeren';
+$lang['ac_user_text_16'] = 'Je bent 16 of 17 jaar oud';
+$lang['ac_user_text_18'] = 'Je bent ouder dan 18 jaar';
+$lang['ad_c_manage_both'] = 'erotische en pornografische inhoud';
+$lang['ad_c_manage_eroticonly'] = 'alleen erotische inhoud';
+$lang['ad_c_manage_pornonly'] = 'alleen pornografische inhoud';
+$lang['ad_c_manage_what'] = 'geef aan welke inhoud de plugin moet beheren:';
+$lang['ad_c_msg_admin_1'] = 'Plugin configuratie succes bijgewerkt';
+$lang['ad_c_send'] = 'aanpassingen opslaan';
 ?>
