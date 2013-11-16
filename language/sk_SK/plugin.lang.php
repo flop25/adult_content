@@ -61,4 +61,5 @@ $lang['ac_retour'] = 'Nechcem otvárať tykýto druh obsahu a preto sa vraciam n
 $lang['ac_retour_b'] = 'Nechcem tento druh obsahu';
 $lang['ac_retour_c'] = 'Vraciam sa na predchádzajúcu stránku';
 $lang['ac_statut'] = 'Vaše rozhodnutie:';
+$lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Upozornenie pre používateľa s možnosťou voľby svojho veku';
 ?>
