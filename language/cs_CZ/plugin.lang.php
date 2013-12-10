@@ -42,7 +42,7 @@ $lang['ad_c_manage_both'] = 'erotický a pornografický obsah';
 $lang['ad_c_manage_eroticonly'] = 'pouze erotický obsah';
 $lang['ad_c_manage_pornonly'] = 'pouze pornografický obsah';
 $lang['ad_c_manage_what'] = 'Zvolte jaký druh obsahu má plugin spravovat:';
-$lang['ad_c_menublock_for_guest'] = 'Povolit neregistrovaným uživatelům zvolit si věk?';
+$lang['ad_c_menublock_for_guest'] = 'Povolit neregistrovaným uživatelům zvolit si svůj věk?';
 $lang['ad_c_msg_admin_1'] = 'Nastavení pluginu bylo úspěšně aktualizováno!';
 $lang['ad_c_send'] = 'Uložit změny';
 $lang['ad_c_howitworks'] = 'Princip tohoto pluginu je v jeho pomoc při zacházením s obsahem pro dospělé (může být taktéž využit pro obsah týkající se násilí). Plugin spravuje návštěvníky a/nebo uživatele dle vašeho přání, dle parametrů, které nastavíte.<br />
@@ -84,4 +84,5 @@ Skrze tyto dva účty závislé na věku návštěvníků můžete ovlivnit co s
 Tento plugin může být adaptován pro zobrazování obsahu obsahujícího násilí tak, že změníte jazykové soubory tohoto pluginu (použijte plugin Local Files Editor pro větší jednoduchost). Věkové limity mohou taktéž být změněny touto cestou.';
 $lang['Disclaimer for the guest, with the ability to choose its age to unlock the adult content'] = 'Upozornění pro uživatele s možností zvolit si svůj věk';
 $lang['NEW! Check the Plugin PWG Stuffs to add the disclaimer on the index/album pages'] = 'NOVÉ! Zkontrolujte Plugin PWG Stuffs pro přidání upozornění na stránkách index / album';
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Žádné možnosti. Pouze zaškrtněte "Povolit neregistrovaným uživatelům zvolit si svůj věk?" na administrativní stránce Adult Content (doplněk "Nevhodný Obsah")';
 ?>
