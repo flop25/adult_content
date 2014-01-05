@@ -52,4 +52,8 @@ $lang['ad_c_manage_pornonly'] = 'alleen pornografische inhoud';
 $lang['ad_c_manage_what'] = 'geef aan welke inhoud de plugin moet beheren:';
 $lang['ad_c_msg_admin_1'] = 'Plugin configuratie succes bijgewerkt';
 $lang['ad_c_send'] = 'aanpassingen opslaan';
+$lang['ac_title_fermer'] = 'gefilterde content';
+$lang['ac_user_no_s'] = 'Gefilterde content';
+$lang['ad_c_linktolang'] = 'Ga naar het taalbestand van 18+ inhoud (eis is Localfiles Editor ingeschakeld)';
+$lang['ad_c_menublock_for_guest'] = 'toe staan dat niet geregistreerde gebruikers hun leeftijd kunnen selecteren?';
 ?>
