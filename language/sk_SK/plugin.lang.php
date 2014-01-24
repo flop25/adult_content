@@ -27,8 +27,6 @@ $lang['ac_text_activ_16'] = '<u> ... a čestne vyhlasujem, že </u>: <br>
         - <B> mám 16 alebo 17 rokov.</B> <br>
 - bol som varovaný, že táto galéria obsahuje pornografický a erotický obsah. <br>
 - zákony mojej krajiny mi umožňujú prehliadať takýto obsah.';
-- bol som varovaný, že táto galéria obsahuje pornografický a erotický obsah. <br>
-- zákony mojej krajiny mi umožňujú prehliadať takýto obsah.';
 $lang['ac_text_activ_18'] = ' <u>... a čestne vyhlasujem, že </u>: <br>
 - <B>som starší ako 18 rokov a som plnoletý </B> podľa zákonov mojej krajiny. <br>
 - bol som varovaný, že táto galéria obsahuje pornografický a erotický obsah. <br>
