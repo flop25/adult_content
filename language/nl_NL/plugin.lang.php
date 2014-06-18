@@ -56,4 +56,4 @@ $lang['ac_title_fermer'] = 'gefilterde content';
 $lang['ac_user_no_s'] = 'Gefilterde content';
 $lang['ad_c_linktolang'] = 'Ga naar het taalbestand van 18+ inhoud (eis is Localfiles Editor ingeschakeld)';
 $lang['ad_c_menublock_for_guest'] = 'toe staan dat niet geregistreerde gebruikers hun leeftijd kunnen selecteren?';
-?>
+$lang['No options. Just check "Allow unregistered users to select their age?" on the Adult Content administration page'] = 'Geen mogelijkheden. Check alleen "Niet-geregistreerde gebruikers toestaan hun leeftijd te selecteren?" op de Volwassen Inhoud beheerpagina.';
