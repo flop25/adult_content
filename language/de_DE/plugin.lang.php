@@ -62,7 +62,7 @@ $lang['ac_text_activ_16'] = '<u> ... und ich versichere hiermit, </ u>: <br>
 $lang['ac_text_activ_18'] = '<u> ... und ich versichere hiermit, </ u>: <br>
 - <B>dass ich nach den Gesetzen meines Landes über 18 Jahre alt bin und ein Erwachsener. </ B> <br>
 - Ich bin über die Inhalte dieser Webseite mit erotischen und pornografischen Bildern gewarnt worden. <br>
-- Die Gesetze meines Landes erlauben mir den Zutritt zu dieser Seite.';
+- Die Gesetze meines Landes erlauben mir den Zutritt zu dieser Seite.
 Diese 2 Gruppen Konten können nicht vom Benutzer geändert werden, sondern nur durch den Administrator.
 Sie öffnen und wählen das Aussehen, je nach Alter der Besucher über diese beiden Gruppen Konten. <br />
 <br />
