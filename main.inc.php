@@ -3,7 +3,7 @@
 Plugin Name: adult_content
 Version: auto
 Description: manage adult content
-Plugin URI: http://phpwebgallery.net/ext/extension_view.php?eid=141
+Plugin URI: http://piwigo.org/ext/extension_view.php?eid=141
 Author: Flop25
 Author URI: http://www.planete-flop.fr/
 
