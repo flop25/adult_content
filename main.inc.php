@@ -6,7 +6,7 @@ Description: manage adult content
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=141
 Author: Flop25
 Author URI: http://www.planete-flop.fr/
-
+Has Settings: true
 */
 
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
@@ -25,7 +25,7 @@ if (!defined('IN_ADMIN') or !IN_ADMIN)
 {
 	add_event_handler('register_user', array(&$adult_content, 'on_register') );
 }
-// Ajout une entrée dans le menubar
+// Ajout une entrï¿½e dans le menubar
 add_event_handler('blockmanager_register_blocks', array(&$adult_content, 'register_ac_menubar_blocks'));
 add_event_handler('blockmanager_apply', array(&$adult_content, 'placer_identification'));
 //block on index

@@ -137,7 +137,7 @@ function plugin_activate()
     ;';
     $data_conf = pwg_db_fetch_array(pwg_query($query));
     $cf=@unserialize($data_conf);
-    $nbr=count($cf);
+    $nbr=@count($cf);
 	
 	  if ($nbr!=2)
 	  {
